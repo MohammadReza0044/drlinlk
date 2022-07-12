@@ -1,0 +1,653 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" dir="rtl" lang="fa-IR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content=""/>
+    <meta name="subject" content=""/>
+    <meta name="language" content="" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    
+    <title>DRlink</title>
+
+    <link rel="stylesheet" href="{% static 'Css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Css/styles.css' %}"/>
+    <link rel="stylesheet" href="{% static 'Css/swiper-bundle.min.css' %}"/>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <svg width="0" height="0" class="hidden">
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 117" id="survey-finish">
+            <circle cx="23" cy="23" r="23" fill="white"></circle>
+            <circle cx="133" cy="23" r="23" fill="white"></circle>
+            <path d="M18 94L26 85C67.2 108.6 110.833 94.8333 127.5 85L136 94C90 134.4 38.1667 110.833 18 94Z" fill="white"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="arrow-left1">
+            <path d="M7.97533 4.94141L2.91699 9.99974L7.97533 15.0581"  stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M17.0836 10H3.05859"  stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="edit-2">
+        <path d="M8.83958 2.39982L3.36624 8.19315C3.15958 8.41315 2.95958 8.84649 2.91958 9.14649L2.67291 11.3065C2.58624 12.0865 3.14624 12.6198 3.91958 12.4865L6.06624 12.1198C6.36624 12.0665 6.78624 11.8465 6.99291 11.6198L12.4662 5.82649C13.4129 4.82649 13.8396 3.68649 12.3662 2.29315C10.8996 0.913152 9.78624 1.39982 8.83958 2.39982Z" stroke="#034EA2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M7.92578 3.36621C8.21245 5.20621 9.70578 6.61288 11.5591 6.79954" stroke="#034EA2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M2 14.667H14" stroke="#034EA2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="arrow-left">
+            <path d="M10.0002 13.2797L5.65355 8.93306C5.14022 8.41973 5.14022 7.57973 5.65355 7.06639L10.0002 2.71973"  stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" id="calendar">
+            <path d="M6 1.5V3.75" stroke="#034EA2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M12 1.5V3.75" stroke="#034EA2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M2.625 6.81738H15.375" stroke="#034EA2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M15.75 6.375V12.75C15.75 15 14.625 16.5 12 16.5H6C3.375 16.5 2.25 15 2.25 12.75V6.375C2.25 4.125 3.375 2.625 6 2.625H12C14.625 2.625 15.75 4.125 15.75 6.375Z" stroke="#034EA2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M11.7713 10.2754H11.778" stroke="#034EA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M11.7713 12.5254H11.778" stroke="#034EA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M8.99588 10.2754H9.00262" stroke="#034EA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M8.99588 12.5254H9.00262" stroke="#034EA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M6.22049 10.2754H6.22723" stroke="#034EA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M6.22049 12.5254H6.22723" stroke="#034EA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="instagram">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C15.5191 0 20 4.48086 20 10C20 15.5191 15.5191 20 10 20C4.48086 20 0 15.5191 0 10C0 4.48086 4.48086 0 10 0ZM10 3.75C8.30262 3.75 8.08977 3.75719 7.42312 3.78762C6.75789 3.81797 6.30355 3.92363 5.90598 4.07812C5.495 4.23785 5.14645 4.45156 4.79898 4.79902C4.45152 5.14648 4.23781 5.49504 4.07809 5.90602C3.92359 6.30355 3.81797 6.75789 3.78758 7.42312C3.75719 8.08977 3.75 8.30262 3.75 10C3.75 11.6974 3.75719 11.9102 3.78758 12.5769C3.81797 13.2421 3.92359 13.6964 4.07809 14.094C4.23781 14.505 4.45152 14.8535 4.79898 15.201C5.14645 15.5485 5.495 15.7622 5.90598 15.9219C6.30355 16.0764 6.75789 16.182 7.42312 16.2124C8.08977 16.2428 8.30262 16.25 10 16.25C11.6974 16.25 11.9102 16.2428 12.5769 16.2124C13.2421 16.182 13.6964 16.0764 14.094 15.9219C14.505 15.7622 14.8535 15.5485 15.201 15.201C15.5485 14.8535 15.7622 14.505 15.9219 14.094C16.0764 13.6964 16.182 13.2421 16.2124 12.5769C16.2428 11.9102 16.25 11.6974 16.25 10C16.25 8.30262 16.2428 8.08977 16.2124 7.42312C16.182 6.75789 16.0764 6.30355 15.9219 5.90602C15.7622 5.49504 15.5485 5.14648 15.201 4.79902C14.8535 4.45156 14.505 4.23785 14.094 4.07812C13.6964 3.92363 13.2421 3.81797 12.5769 3.78762C11.9102 3.75719 11.6974 3.75 10 3.75ZM10 4.87613C11.6688 4.87613 11.8665 4.8825 12.5255 4.91258C13.1349 4.94039 13.4658 5.04219 13.6861 5.12777C13.9778 5.24113 14.186 5.3766 14.4047 5.59531C14.6234 5.81398 14.7589 6.02223 14.8722 6.31394C14.9578 6.53418 15.0596 6.86508 15.0874 7.47445C15.1175 8.13352 15.1239 8.33117 15.1239 10C15.1239 11.6688 15.1175 11.8665 15.0874 12.5255C15.0596 13.1349 14.9578 13.4658 14.8722 13.6861C14.7589 13.9778 14.6234 14.186 14.4047 14.4047C14.186 14.6234 13.9778 14.7589 13.6861 14.8722C13.4658 14.9578 13.1349 15.0596 12.5255 15.0874C11.8666 15.1175 11.6689 15.1239 10 15.1239C8.33105 15.1239 8.13344 15.1175 7.47445 15.0874C6.86508 15.0596 6.53418 14.9578 6.31394 14.8722C6.02219 14.7589 5.81398 14.6234 5.59527 14.4047C5.37656 14.186 5.24113 13.9778 5.12777 13.6861C5.04219 13.4658 4.94035 13.1349 4.91254 12.5255C4.88246 11.8665 4.87613 11.6688 4.87613 10C4.87613 8.33117 4.88246 8.13352 4.91254 7.47445C4.94035 6.86508 5.04219 6.53418 5.12777 6.31394C5.24113 6.02223 5.37656 5.81398 5.59527 5.59531C5.81398 5.3766 6.02219 5.24113 6.31394 5.12777C6.53418 5.04219 6.86508 4.94039 7.47445 4.91258C8.13352 4.8825 8.33117 4.87613 10 4.87613ZM10 6.79055C8.22746 6.79055 6.79055 8.22746 6.79055 10C6.79055 11.7725 8.22746 13.2095 10 13.2095C11.7725 13.2095 13.2095 11.7725 13.2095 10C13.2095 8.22746 11.7725 6.79055 10 6.79055ZM10 12.0833C8.84941 12.0833 7.91668 11.1506 7.91668 10C7.91668 8.84941 8.84941 7.91668 10 7.91668C11.1506 7.91668 12.0833 8.84941 12.0833 10C12.0833 11.1506 11.1506 12.0833 10 12.0833ZM14.0863 6.66375C14.0863 7.07797 13.7505 7.41371 13.3362 7.41371C12.9221 7.41371 12.5863 7.07797 12.5863 6.66375C12.5863 6.24953 12.9221 5.91375 13.3362 5.91375C13.7505 5.91375 14.0863 6.24953 14.0863 6.66375Z" ></path>
+        </symbol>
+        <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="linkedin">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C15.5191 0 20 4.48086 20 10C20 15.5191 15.5191 20 10 20C4.48086 20 0 15.5191 0 10C0 4.48086 4.48086 0 10 0ZM6.87355 15.62V7.81055H4.2773V15.62H6.87355ZM16.2337 15.62V11.1416C16.2337 8.74281 14.953 7.62691 13.2451 7.62691C11.8679 7.62691 11.2511 8.3843 10.9057 8.91625V7.81055H8.31008C8.34449 8.54324 8.31008 15.62 8.31008 15.62H10.9056V11.2586C10.9056 11.0252 10.9224 10.7918 10.9912 10.625C11.1785 10.1588 11.6059 9.67582 12.323 9.67582C13.2619 9.67582 13.638 10.3922 13.638 11.4416V15.62H16.2337ZM5.59297 4.04492C4.70469 4.04492 4.12434 4.62891 4.12434 5.39434C4.12434 6.14363 4.68703 6.74371 5.55859 6.74371H5.57535C6.48063 6.74371 7.0441 6.14363 7.0441 5.39434C7.0273 4.62891 6.48066 4.04492 5.59297 4.04492Z" ></path>
+        </symbol>
+        <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="telegram">
+            <path d="M10 0C4.47715 0 0 4.47715 0 10C0 15.5229 4.47715 20 10 20C15.5229 20 20 15.5229 20 10C20 4.47715 15.5229 0 10 0ZM15.1976 6.32563L13.4215 14.8047C13.4 14.9072 13.3531 15.0028 13.2851 15.0824C13.2171 15.1621 13.1301 15.2235 13.0322 15.2608C12.9343 15.2981 12.8285 15.3102 12.7247 15.296C12.6209 15.2817 12.5223 15.2417 12.438 15.1794L9.85461 13.2708L8.28945 14.7473C8.26897 14.7667 8.24483 14.7817 8.21846 14.7916C8.1921 14.8015 8.16402 14.8061 8.13587 14.805C8.10773 14.8039 8.08008 14.7973 8.05453 14.7854C8.02899 14.7735 8.00607 14.7567 7.98711 14.7359L7.95348 14.6989L8.22543 12.0671L13.1271 7.58852C13.1514 7.5664 13.1665 7.53601 13.1694 7.50333C13.1723 7.47065 13.1629 7.43806 13.143 7.41199C13.1231 7.38591 13.0941 7.36825 13.0618 7.36248C13.0295 7.35671 12.9962 7.36325 12.9685 7.38082L6.6998 11.3484L4 10.4417C3.92821 10.4176 3.86565 10.3718 3.82089 10.3107C3.77612 10.2497 3.75136 10.1762 3.74999 10.1005C3.74862 10.0248 3.77071 9.9505 3.81324 9.88784C3.85576 9.82517 3.91663 9.7772 3.9875 9.75051L14.5508 5.77125C14.6323 5.74059 14.7205 5.73238 14.8062 5.74748C14.892 5.76258 14.9721 5.80043 15.0382 5.85709C15.1043 5.91375 15.154 5.98712 15.182 6.06954C15.2101 6.15197 15.2154 6.24041 15.1976 6.32563Z"></path>
+        </symbol>
+        <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="twitter">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C15.5191 0 20 4.48086 20 10C20 15.5191 15.5191 20 10 20C4.48086 20 0 15.5191 0 10C0 4.48086 4.48086 0 10 0ZM8.23863 15.3187C12.6637 15.3187 15.0833 11.6519 15.0833 8.47402C15.0833 8.36926 15.0833 8.26449 15.0783 8.16469C15.5473 7.82547 15.9564 7.40141 16.2806 6.9175C15.8516 7.10707 15.3876 7.2368 14.8987 7.29664C15.3976 6.9973 15.7768 6.52836 15.9564 5.96465C15.4924 6.23902 14.9786 6.43855 14.4298 6.54832C13.9907 6.07937 13.3671 5.79004 12.6737 5.79004C11.3467 5.79004 10.2691 6.86762 10.2691 8.19465C10.2691 8.38422 10.2891 8.56879 10.3339 8.7434C8.33344 8.64363 6.56238 7.68578 5.37508 6.22902C5.17051 6.58324 5.05078 6.9973 5.05078 7.43633C5.05078 8.26945 5.47484 9.00781 6.1234 9.43684C5.72926 9.42687 5.36008 9.31711 5.03582 9.13754V9.16746C5.03582 10.3348 5.86395 11.3027 6.96648 11.5272C6.76695 11.582 6.55242 11.612 6.33293 11.612C6.17824 11.612 6.02859 11.597 5.87895 11.5671C6.18324 12.5249 7.07125 13.2184 8.12391 13.2383C7.30074 13.8819 6.26309 14.2661 5.13559 14.2661C4.94102 14.2661 4.75145 14.2561 4.56187 14.2311C5.61453 14.9196 6.88168 15.3187 8.23863 15.3187V15.3187Z" ></path>
+        </symbol>
+        <symbol  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="whatsapp">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C15.5191 0 20 4.48086 20 10C20 15.5191 15.5191 20 10 20C4.48086 20 0 15.5191 0 10C0 4.48086 4.48086 0 10 0ZM14.7471 5.26734C13.55 4.06922 11.958 3.4091 10.2619 3.40844C6.76707 3.40844 3.9227 6.25172 3.92133 9.74656C3.92086 10.8637 4.21281 11.9542 4.76766 12.9154L3.86812 16.2L7.22938 15.3186C8.15547 15.8236 9.19816 16.0896 10.2594 16.0901H10.262C13.7565 16.0901 16.6011 13.2465 16.6025 9.7516C16.6032 8.05793 15.9443 6.46539 14.7471 5.26734ZM10.262 15.0196H10.2598C9.31418 15.0192 8.38668 14.7652 7.57754 14.2852L7.38508 14.171L5.39051 14.6941L5.92289 12.75L5.79758 12.5507C5.27004 11.7119 4.99145 10.7424 4.99184 9.74695C4.99301 6.84219 7.35715 4.47895 10.2641 4.47895C11.6717 4.47949 12.9948 5.02824 13.9898 6.02402C14.9848 7.01984 15.5325 8.34352 15.532 9.75121C15.5308 12.6562 13.1667 15.0195 10.262 15.0196ZM13.1527 11.0739C12.9943 10.9946 12.2154 10.6114 12.0701 10.5586C11.9249 10.5057 11.8193 10.4793 11.7137 10.6379C11.608 10.7964 11.3044 11.1532 11.212 11.2589C11.1196 11.3645 11.0272 11.3778 10.8687 11.2985C10.7103 11.2193 10.1998 11.052 9.59473 10.5124C9.12375 10.0925 8.80578 9.57375 8.71336 9.41523C8.62098 9.25668 8.70352 9.17098 8.78285 9.09199C8.8541 9.02105 8.94125 8.90703 9.02047 8.81453C9.09969 8.72203 9.12609 8.65598 9.17891 8.55031C9.23172 8.44457 9.20531 8.35211 9.1657 8.27281C9.12609 8.19355 8.80926 7.41398 8.67723 7.09687C8.54867 6.78805 8.41805 6.82984 8.32078 6.825C8.22848 6.82039 8.12277 6.81941 8.01715 6.81941C7.91152 6.81941 7.73992 6.85906 7.59465 7.01762C7.44945 7.17617 7.0402 7.55934 7.0402 8.33887C7.0402 9.11844 7.60789 9.87152 7.68711 9.97727C7.76633 10.083 8.80426 11.6827 10.3935 12.3687C10.7715 12.5319 11.0666 12.6293 11.2967 12.7023C11.6762 12.8229 12.0216 12.8059 12.2946 12.7651C12.5989 12.7196 13.2319 12.3819 13.3639 12.012C13.4959 11.642 13.4959 11.3249 13.4563 11.2589C13.4167 11.1928 13.3111 11.1532 13.1527 11.0739Z" ></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="menu">
+            <path d="M3 7H21" stroke="#353535" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M3 12H21" stroke="#353535" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M3 17H21" stroke="#353535" stroke-width="1.5" stroke-linecap="round"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 148" id="tick-circle"><path d="M74.0007 135.667C107.917 135.667 135.667 107.917 135.667 74.0002C135.667 40.0835 107.917 12.3335 74.0007 12.3335C40.084 12.3335 12.334 40.0835 12.334 74.0002C12.334 107.917 40.084 135.667 74.0007 135.667Z" stroke="#34C226" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M47.791 74L65.2427 91.4517L100.208 56.5483" stroke="#34C226" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="close-circle">
+            <path d="M5 19L19 5"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M19 19L5 5"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="search-icon">
+            <path d="M8.74935 15.8332C12.6614 15.8332 15.8327 12.6619 15.8327 8.74984C15.8327 4.83782 12.6614 1.6665 8.74935 1.6665C4.83733 1.6665 1.66602 4.83782 1.66602 8.74984C1.66602 12.6619 4.83733 15.8332 8.74935 15.8332Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M17.4993 19.1668L14.166 15.8335" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="like">
+            <path d="M6.23438 15.292L8.81771 17.292C9.15104 17.6254 9.90104 17.792 10.401 17.792H13.5677C14.5677 17.792 15.651 17.042 15.901 16.042L17.901 9.95871C18.3177 8.79205 17.5677 7.79205 16.3177 7.79205H12.9844C12.4844 7.79205 12.0677 7.37538 12.151 6.79205L12.5677 4.12538C12.7344 3.37538 12.2344 2.54205 11.4844 2.29205C10.8177 2.04205 9.98437 2.37538 9.65104 2.87538L6.23438 7.95871"  stroke-width="1.5" stroke-miterlimit="10"></path>
+            <path d="M1.98242 15.292V7.12533C1.98242 5.95866 2.48242 5.54199 3.64909 5.54199H4.48242C5.64909 5.54199 6.14909 5.95866 6.14909 7.12533V15.292C6.14909 16.4587 5.64909 16.8753 4.48242 16.8753H3.64909C2.48242 16.8753 1.98242 16.4587 1.98242 15.292Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="message">
+            <path d="M7.08268 15.8337H6.66602C3.33268 15.8337 1.66602 15.0003 1.66602 10.8337V6.66699C1.66602 3.33366 3.33268 1.66699 6.66602 1.66699H13.3327C16.666 1.66699 18.3327 3.33366 18.3327 6.66699V10.8337C18.3327 14.167 16.666 15.8337 13.3327 15.8337H12.916C12.6577 15.8337 12.4077 15.9587 12.2493 16.167L10.9993 17.8337C10.4493 18.567 9.54935 18.567 8.99935 17.8337L7.74935 16.167C7.61602 15.9837 7.30768 15.8337 7.08268 15.8337Z"  stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145 145" id="close-circle-modal">
+            <path d="M72.5007 132.916C105.73 132.916 132.917 105.729 132.917 72.4997C132.917 39.2705 105.73 12.083 72.5007 12.083C39.2715 12.083 12.084 39.2705 12.084 72.4997C12.084 105.729 39.2715 132.916 72.5007 132.916Z" stroke="#DF2040" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M55.4023 89.5982L89.5982 55.4023" stroke="#DF2040" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M89.5982 89.5982L55.4023 55.4023" stroke="#DF2040" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="call-calling">
+            <path d="M21.97 18.33C21.97 18.69 21.89 19.06 21.72 19.42C21.55 19.78 21.33 20.12 21.04 20.44C20.55 20.98 20.01 21.37 19.4 21.62C18.8 21.87 18.15 22 17.45 22C16.43 22 15.34 21.76 14.19 21.27C13.04 20.78 11.89 20.12 10.75 19.29C9.6 18.45 8.51 17.52 7.47 16.49C6.44 15.45 5.51 14.36 4.68 13.22C3.86 12.08 3.2 10.94 2.72 9.81C2.24 8.67 2 7.58 2 6.54C2 5.86 2.12 5.21 2.36 4.61C2.6 4 2.98 3.44 3.51 2.94C4.15 2.31 4.85 2 5.59 2C5.87 2 6.15 2.06 6.4 2.18C6.66 2.3 6.89 2.48 7.07 2.74L9.39 6.01C9.57 6.26 9.7 6.49 9.79 6.71C9.88 6.92 9.93 7.13 9.93 7.32C9.93 7.56 9.86 7.8 9.72 8.03C9.59 8.26 9.4 8.5 9.16 8.74L8.4 9.53C8.29 9.64 8.24 9.77 8.24 9.93C8.24 10.01 8.25 10.08 8.27 10.16C8.3 10.24 8.33 10.3 8.35 10.36C8.53 10.69 8.84 11.12 9.28 11.64C9.73 12.16 10.21 12.69 10.73 13.22C11.27 13.75 11.79 14.24 12.32 14.69C12.84 15.13 13.27 15.43 13.61 15.61C13.66 15.63 13.72 15.66 13.79 15.69C13.87 15.72 13.95 15.73 14.04 15.73C14.21 15.73 14.34 15.67 14.45 15.56L15.21 14.81C15.46 14.56 15.7 14.37 15.93 14.25C16.16 14.11 16.39 14.04 16.64 14.04C16.83 14.04 17.03 14.08 17.25 14.17C17.47 14.26 17.7 14.39 17.95 14.56L21.26 16.91C21.52 17.09 21.7 17.3 21.81 17.55C21.91 17.8 21.97 18.05 21.97 18.33Z"  stroke-width="1.5" stroke-miterlimit="10"></path>
+            <path d="M18.5 9C18.5 8.4 18.03 7.48 17.33 6.73C16.69 6.04 15.84 5.5 15 5.5"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M22 9C22 5.13 18.87 2 15 2"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" id="sms">
+              <path d="M20 20.5H10C7 20.5 5 19 5 15.5V8.5C5 5 7 3.5 10 3.5H20C23 3.5 25 5 25 8.5V15.5C25 19 23 20.5 20 20.5Z"  stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M20 9L16.87 11.5C15.84 12.32 14.15 12.32 13.12 11.5L10 9"  stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+          
+        </symbol>
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="location">
+            <path d="M11.9989 13.4299C13.722 13.4299 15.1189 12.0331 15.1189 10.3099C15.1189 8.58681 13.722 7.18994 11.9989 7.18994C10.2758 7.18994 8.87891 8.58681 8.87891 10.3099C8.87891 12.0331 10.2758 13.4299 11.9989 13.4299Z"  stroke-width="1.5"></path>
+            <path d="M3.61971 8.49C5.58971 -0.169998 18.4197 -0.159997 20.3797 8.5C21.5297 13.58 18.3697 17.88 15.5997 20.54C13.5897 22.48 10.4097 22.48 8.38971 20.54C5.62971 17.88 2.46971 13.57 3.61971 8.49Z"  stroke-width="1.5"></path>
+        </symbol>
+      </svg>
+    <div class="site-wrap" id="site_wrap">
+    <header>
+        <div class="site-header ">
+            <div class="container">
+                <h1 class="site-logo">
+                    <a href="index.html">
+                        <span class="logo-first-part">دکتر</span>
+                        <span class="logo-last-part">لینک</span>
+                    </a>
+                </h1>
+                <nav>
+                    <ul class="top-menu">
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="about-product.html">معرفی محصول</a></li>
+                        <li><a href="support.html">درخواست مشاوره رایگان</a></li>
+                        <li><a href="blog.html">بلاگ</a></li>
+                        <li><a href="about-us.html">درباره ما</a></li>
+                        <li><a href="contact-us.html">ارتباط با ما</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="product-purchase-link" >مشاوره با ما</a>
+            </div>
+        </div>
+        <!--.site-header-->
+        <div class="mobile-header">
+            <div class="container ">
+                <h1 class="mobile-header-logo">
+                    <a href="index.html">
+                        <span class="logo-first-part">دکتر</span>
+                        <span class="logo-last-part">لینک</span>
+                    </a>
+                </h1>
+                <span  class="menu-icon-res res-menu-control">
+                    <svg><use xlink:href="#menu"></use></svg>
+                </span>
+            </div>
+        </div>
+        <!-- .mobile-header -->
+    </header>
+    <!--header-->
+
+    <main>
+        <div class="container page-content ">
+            <div class="page-title blog-page-title">
+                <h2  class="custom-title">وبلاگ</h2>
+            </div>
+            <!--.page-title-->
+
+            <form id="search_form" action="" method="POST">
+                <input type="text" placeholder="جستجو" name="s">
+                <button type="submit">
+                    <svg class="drlink-icon">
+                        <use xlink:href="#search-icon"></use>
+                    </svg>
+                </button>
+            </form>
+
+            <section class = "important-articles margin-b-main row">
+                <!-- <div class="row"> -->
+                    <div class="col-md-4">
+                        <article class="i-article i-article-small">
+                            <a href="article.html" class="abs-fill"></a>
+                            <img src="assets/images/art4.png" alt="articlle-img" />
+                            <div class="i-article-detail">
+                                <div>
+                                    <h2 class="article-item-title ">فرمول 5 مرحله‌ای استخدام پرسنل کلینیک</h2>
+                                    <span class="article-item-permalink">
+                                        <span>بیشتر بخوانید</span>
+                                        <svg class="drlink-icon">
+                                            <use xlink:href="#arrow-left"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="i-article i-article-small">
+                            <a href="article.html" class="abs-fill"></a>
+                            <img src="assets/images/art2.png" alt="articlle-img" />
+                            <div class="i-article-detail">
+                                <div>
+                                    <h2 class="article-item-title ">فرمول 5 مرحله‌ای استخدام پرسنل کلینیک</h2>
+                                    <span class="article-item-permalink">
+                                        <span>بیشتر بخوانید</span>
+                                        <svg class="drlink-icon">
+                                            <use xlink:href="#arrow-left"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <article class="col-md-8 i-article i-article-big">
+                        <a href="article.html" class="abs-fill"></a>
+                        <img src="assets/images/i-article1.png" alt="articlle-img" />
+                        <div class="i-article-detail">
+                            <div>
+                                <h2 class="article-item-title ">فرمول 5 مرحله‌ای استخدام پرسنل کلینیک</h2>
+                                <span class="article-item-permalink">
+                                    <span>بیشتر بخوانید</span>
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#arrow-left"></use>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                <!-- </div> -->
+            </section>
+            <!--.important-articles-->
+            <h3 class="blog-latest-articles-title custom-title">آخرین مطالب</h3>
+            <section class="blog-latest-articles">
+                <article class="article-item">
+                    <a href="article.html" class="abs-fill"></a>
+                    <a hhref="article.html"  ><img src="assets/images/a-img1.png" alt="articlle-img" /></a>
+                    <div class="article-item-detail">
+                        <p class="article-item-author">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#edit-2"></use>
+                            </svg>
+                            <span>نویسنده:</span><span>مهسا باقری</span>
+                        </p>
+                        <h2 class="article-item-title">فرمول5 مرحله ای استخدام پرسنل کلینیک</h2>
+                        <p class="article-item-exerpt">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.                           
+                        </p>
+                    </div>
+                    <!--.article-item-detail-->
+                    <div class="article-item-footer">
+                        <div class="article-item-date">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            <span>4 اسفند 1400</span>
+                        </div>
+                        <a class="article-item-permalink" href="article.html">
+                            <span>بیشتر بخوانید</span>
+                            <svg class="drlink-icon">
+                            <use xlink:href="#arrow-left"></use>
+                          </svg>
+                        </a>
+                    </div>
+                </article>
+                <!--.article-item-->
+
+                <article class="article-item">
+                    <a href="article.html" class="abs-fill"></a>
+                    <a href="article.html"  ><img src="assets/images/atricle2.png" alt="articlle-img" /></a>
+                    <div class="article-item-detail">
+                        <p class="article-item-author">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#edit-2"></use>
+                            </svg>
+                            <span>نویسنده:</span><span>مهسا باقری</span>
+                        </p>
+                        <h2 class="article-item-title">فرمول5 مرحله ای استخدام پرسنل کلینیک</h2>
+                        <p class="article-item-exerpt">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.                           
+                        </p>
+                    </div>
+                    <!--.article-item-detail-->
+                    <div class="article-item-footer">
+                        <div class="article-item-date">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            <span>4 اسفند 1400</span>
+                        </div>
+                        <a class="article-item-permalink" href="article.html">
+                            <span>بیشتر بخوانید</span>
+                            <svg class="drlink-icon">
+                            <use xlink:href="#arrow-left"></use>
+                          </svg>
+                        </a>
+                    </div>
+                </article>
+                <!--.article-item-->
+
+                <article class="article-item">
+                    <a href="article.html" class="abs-fill"></a>
+                    <a href="article.html" ><img src="assets/images/a-img2.png" alt="articlle-img" /></a>
+                    <div class="article-item-detail">
+                        <p class="article-item-author">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#edit-2"></use>
+                            </svg>
+                            <span>نویسنده:</span><span>مهسا باقری</span>
+                        </p>
+                        <h2 class="article-item-title">فرمول5 مرحله ای استخدام پرسنل کلینیک</h2>
+                        <p class="article-item-exerpt">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.                           
+                        </p>
+                    </div>
+                    <!--.article-item-detail-->
+                    <div class="article-item-footer">
+                        <div class="article-item-date">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            <span>4 اسفند 1400</span>
+                        </div>
+                        <a class="article-item-permalink" href="article.html">
+                            <span>بیشتر بخوانید</span>
+                            <svg class="drlink-icon">
+                            <use xlink:href="#arrow-left"></use>
+                          </svg>
+                        </a>
+                    </div>
+                </article>
+                <!--.article-item-->
+
+                <article class="article-item">
+                    <a href="article.html" class="abs-fill"></a>
+                    <a href="article.html"  ><img src="assets/images/a-img5.png" alt="articlle-img" /></a>
+                    <div class="article-item-detail">
+                        <p class="article-item-author">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#edit-2"></use>
+                            </svg>
+                            <span>نویسنده:</span><span>مهسا باقری</span>
+                        </p>
+                        <h2 class="article-item-title">فرمول5 مرحله ای استخدام پرسنل کلینیک</h2>
+                        <p class="article-item-exerpt">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.                           
+                        </p>
+                    </div>
+                    <!--.article-item-detail-->
+                    <div class="article-item-footer">
+                        <div class="article-item-date">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            <span>4 اسفند 1400</span>
+                        </div>
+                        <a class="article-item-permalink" href="article.html">
+                            <span>بیشتر بخوانید</span>
+                            <svg class="drlink-icon">
+                            <use xlink:href="#arrow-left"></use>
+                          </svg>
+                        </a>
+                    </div>
+                </article>
+                <!--.article-item-->
+
+                <article class="article-item">
+                    <a href="article.html" class="abs-fill"></a>
+                    <a href="article.html"  ><img src="assets/images/a-img4.png" alt="articlle-img" /></a>
+                    <div class="article-item-detail">
+                        <p class="article-item-author">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#edit-2"></use>
+                            </svg>
+                            <span>نویسنده:</span><span>مهسا باقری</span>
+                        </p>
+                        <h2 class="article-item-title">فرمول5 مرحله ای استخدام پرسنل کلینیک</h2>
+                        <p class="article-item-exerpt">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.                           
+                        </p>
+                    </div>
+                    <!--.article-item-detail-->
+                    <div class="article-item-footer">
+                        <div class="article-item-date">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            <span>4 اسفند 1400</span>
+                        </div>
+                        <a class="article-item-permalink" href="article.html">
+                            <span>بیشتر بخوانید</span>
+                            <svg class="drlink-icon">
+                            <use xlink:href="#arrow-left"></use>
+                          </svg>
+                        </a>
+                    </div>
+                </article>
+                <!--.article-item-->
+
+                <article class="article-item">
+                    <a href="article.html" class="abs-fill"></a>
+                    <a href="article.html"  ><img src="assets/images/a-img3.png" alt="articlle-img" /></a>
+                    <div class="article-item-detail">
+                        <p class="article-item-author">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#edit-2"></use>
+                            </svg>
+                            <span>نویسنده:</span><span>مهسا باقری</span>
+                        </p>
+                        <h2 class="article-item-title">فرمول5 مرحله ای استخدام پرسنل کلینیک</h2>
+                        <p class="article-item-exerpt">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.                           
+                        </p>
+                    </div>
+                    <!--.article-item-detail-->
+                    <div class="article-item-footer">
+                        <div class="article-item-date">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            <span>4 اسفند 1400</span>
+                        </div>
+                        <a class="article-item-permalink" href="article.html">
+                            <span>بیشتر بخوانید</span>
+                            <svg class="drlink-icon">
+                            <use xlink:href="#arrow-left"></use>
+                          </svg>
+                        </a>
+                    </div>
+                </article>
+                <!--.article-item-->
+                <article class="article-item">
+                    <a href="article.html" class="abs-fill"></a>
+                    <a href="article.html"  ><img src="assets/images/a-img6.png" alt="articlle-img" /></a>
+                    <div class="article-item-detail">
+                        <p class="article-item-author">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#edit-2"></use>
+                            </svg>
+                            <span>نویسنده:</span><span>مهسا باقری</span>
+                        </p>
+                        <h2 class="article-item-title">فرمول5 مرحله ای استخدام پرسنل کلینیک</h2>
+                        <p class="article-item-exerpt">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.                           
+                        </p>
+                    </div>
+                    <!--.article-item-detail-->
+                    <div class="article-item-footer">
+                        <div class="article-item-date">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            <span>4 اسفند 1400</span>
+                        </div>
+                        <a class="article-item-permalink" href="article.html">
+                            <span>بیشتر بخوانید</span>
+                            <svg class="drlink-icon">
+                            <use xlink:href="#arrow-left"></use>
+                          </svg>
+                        </a>
+                    </div>
+                </article>
+                <!--.article-item-->
+                <article class="article-item">
+                    <a href="article.html"class="abs-fill"></a>
+                    <a href="article.html" ><img src="assets/images/a-img7.png" alt="articlle-img" /></a>
+                    <div class="article-item-detail">
+                        <p class="article-item-author">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#edit-2"></use>
+                            </svg>
+                            <span>نویسنده:</span><span>مهسا باقری</span>
+                        </p>
+                        <h2 class="article-item-title">فرمول5 مرحله ای استخدام پرسنل کلینیک</h2>
+                        <p class="article-item-exerpt">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.                           
+                        </p>
+                    </div>
+                    <!--.article-item-detail-->
+                    <div class="article-item-footer">
+                        <div class="article-item-date">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            <span>4 اسفند 1400</span>
+                        </div>
+                        <a class="article-item-permalink" href="article.html">
+                            <span>بیشتر بخوانید</span>
+                            <svg class="drlink-icon">
+                            <use xlink:href="#arrow-left"></use>
+                          </svg>
+                        </a>
+                    </div>
+                </article>
+                <!--.article-item-->
+
+                <article class="article-item">
+                    <a href="article.html" class="abs-fill"></a>
+                    <a href="article.html"  ><img src="assets/images/a-img8.png" alt="articlle-img" /></a>
+                    <div class="article-item-detail">
+                        <p class="article-item-author">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#edit-2"></use>
+                            </svg>
+                            <span>نویسنده:</span><span>مهسا باقری</span>
+                        </p>
+                        <h2 class="article-item-title">فرمول5 مرحله ای استخدام پرسنل کلینیک</h2>
+                        <p class="article-item-exerpt">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.                           
+                        </p>
+                    </div>
+                    <!--.article-item-detail-->
+                    <div class="article-item-footer">
+                        <div class="article-item-date">
+                            <svg class="drlink-icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            <span>4 اسفند 1400</span>
+                        </div>
+                        <a class="article-item-permalink" href="article.html">
+                            <span>بیشتر بخوانید</span>
+                            <svg class="drlink-icon">
+                            <use xlink:href="#arrow-left"></use>
+                          </svg>
+                        </a>
+                    </div>
+                </article>
+                <!--.article-item-->
+
+            </section>
+            <!--.latest-articles-->
+
+            <section class="articles-pagination">
+                <nav aria-label="...">
+                    <ul class="pagination">
+                      <!-- <li class="page-item disabled ">
+                        <a class="page-link prev" href="#" tabindex="-1" aria-disabled="true">  
+                            <svg class="drlink-icon">
+                                <use xlink:href="#arrow-left1"></use>
+                            </svg>
+                        </a>
+                      </li> -->
+                      <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item" >
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item extend"><a class="page-link" href="#">...</a></li>
+                      <li class="page-item ">
+                        <a class="page-link" href="#">28</a>
+                      </li>
+                      <li class="page-item ">
+                        <a class="page-link" href="#">29</a>
+                      </li>
+                      <li class="page-item ">
+                        <a class="page-link next" href="#">
+                            <svg class="drlink-icon ">
+                                <use xlink:href="#arrow-left1"></use>
+                            </svg>
+                        </a>
+                      </li>
+                    </ul>
+                </nav>
+
+            </section>
+            <!--.articles-pagination-->
+
+
+        
+        </div>
+    </main>
+    <!--main-->
+
+
+    <footer class="site-footer">
+        <div class="container  site-footer-content">
+            <a href="index.html" class="site-footer-logo">
+                <span class="logo-first-part">دکتر</span>
+                <span class="logo-last-part">لینک</span>
+            </a>
+            <div class="site-footer-contact-info">
+                <span class="footer-contact-phone col-xxl-3"><span>تلفن تماس: </span><span>۰۲۱۲۲۰۶۷۶۳۵</span> <span>تماس فوری: ۰۹۱۲۰۰۴۴۸۲۴</span></span>
+                                <span class="footer-contact-time"><span>ساعات پاسخگویی: </span><span>از <span class="time-contain">۸ صبح تا ۸ شب</span> و در روز های تعطیل با موبایل تماس بگیرید</span></span>
+            </div>
+            <div class="site-footer-detail">
+                <div class="site-footer-menu col-xxl-3">
+                    <!-- <h5 class="footer-det-title">دکتر لینک</h5> -->
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">دکتر لینک</a></li>
+                            <li><a href="about-us.html">درباره ما</a></li>
+                            <li><a href="rules.html">قوانین و مقررات </a></li>
+                            <li><a href="privacy.html">حریم خصوصی</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div  class="site-footer-text col-xxl-5">
+                    <h5 class="footer-det-title">دکتر لینک، مدیریت هوشمند کلینیک</h5>
+                    <p>سیستم جامع و یکپارچه مدیریت دکتر لینک، یک سیستم حرفه ای تشکیل شده از کانال های ارتباطی هوشمند و یکپارچه جهت مدیریت سریع و با کیفیت در راستای جذب و وفادار سازی درمانجو می باشد، این سیستم به مدیران ارشد کمک میکند تا در مسیر رشد بهترین تصمیمات مدیریتی را اتخاذ و با اطمینان خاطر برای آینده کلینیک خود برنامه ریزی کنند، دکتر لینک با افتخار از سال ۱۳۸۹ در این مسیر قدم نهاد.</p>
+                </div>
+                <div class="site-footer-enamad col-xxl-2">
+                    <a href="#"><img src="assets/images/enamad1.png" /></a>
+                    <a href="#"><img src="assets/images/enamad2.png" /></a>
+                </div>
+            </div>
+            <!--.site-footer-detail-->
+
+            <div class="footer-copyright">
+                <p>تمامی حقوق این سایت مربوط به <a href="index.html">دکتر لینک </a>می باشد.  </p>
+                <div class="social-media-links">
+                    <a href="#" title ="linkedin">
+                        <svg class="drlink-icon">
+                            <use xlink:href="#linkedin"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/13298799/" title ="whatsapp">
+                        <svg class="drlink-icon">
+                            <use xlink:href="#whatsapp"></use>
+                        </svg>
+                    </a>
+                    <a href="#" title ="instagram">
+                        <svg class="drlink-icon">
+                            <use xlink:href="#instagram"></use>
+                        </svg>
+                    </a>
+                    <a href="#" title ="twitter">
+                        <svg class="drlink-icon">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                    </a>
+                    <a href="#" title="telegram">
+                        <svg class="drlink-icon">
+                            <use xlink:href="#telegram"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!--.footer-copyright-->
+        </div>
+        <!--.site-footer-content-->
+    </footer>
+    <!--.site-footer-->
+    </div>
+    <!--site_wrap-->
+    <div id="mySidenav" class="sidenav">
+        <div>
+        <a href="#" class="closebtn res-menu-control"> <span>بستن</span><svg><use xlink:href="#close-circle"></use></svg></a>
+        <nav>
+            <ul class="top-menu-side">
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="about-product.html">معرفی محصول</a></li>
+                <li><a href="support.html">درخواست مشاوره رایگان</a></li>
+                <li><a href="blog.html">بلاگ</a></li>
+                <li><a href="about-us.html">درباره ما</a></li>
+                <li><a href="contact-us.html">ارتباط با ما</a></li>
+            </ul>
+        </nav>   
+        </div>     
+    </div>  
+    <div class="product-purchase-link-container">
+        <div class="container"> 
+            <a href="#" class=" product-purchase-link-fixed">مشاوره با ما</a>
+        </div>
+    </div>
+</body>
+</html>
