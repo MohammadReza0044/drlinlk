@@ -1,3 +1,10 @@
 from django.shortcuts import render
 
-# Create your views here.
+from models import Posts
+
+
+def post_view(request):
+    post= Posts.objects.all()
+
+    context = {'post': post}
+    return render(request, 'weblog/blog.html', context=context)

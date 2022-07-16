@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'survery',
     'weblog',
     
+    
 ]
 
 MIDDLEWARE = [
