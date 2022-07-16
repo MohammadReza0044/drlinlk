@@ -12,7 +12,7 @@ def post_view(request):
 
 
 def post_detail(request,pk):
-    post= get_object_or_404 (Posts, pk=pk)
+    post = get_object_or_404 (Posts, pk=pk)
     context = {'post': post}
     return render(request, 'weblog/article.html', context=context)
     
