@@ -251,31 +251,30 @@
                     </div>
                 </article>
                 <!--.article-item-->
-                {% for p in post %}
+                {% for p in posts %}
                 <article class="article-item">
-                    <a href="article.html" class="abs-fill"></a>
-                    <a href="article.html"  ><img src="{% static 'img/atricle2.png' %}" alt="articlle-img" /></a>
+                    <a href='weblog/{{p.id}}/' class="abs-fill"> </a>
+                    <a href="weblog/{{p.id}}/"  ><img src="{% static 'img/atricle2.png' %}" alt="articlle-img" /></a>
                     <div class="article-item-detail">
                         <p class="article-item-author">
                             <svg class="drlink-icon">
                                 <use xlink:href="#edit-2"></use>
                             </svg>
-                            <span>نویسنده:</span><span>مهسا باقری</span>
+                            <span>نویسنده:</span><span> {{p.user_id}}</span>
                         </p>
-                        <h2 class="article-item-title">{{p.post_title_fa}}</h2>
-                        <p class="article-item-exerpt">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.                           
-                        </p>
+                        <h2 class="article-item-title">{{p.post_title_fa}}</h2> </a>
+                        <p class="article-item-exerpt"> {{p.media_description }} </p>
+                        
                     </div>
-                    .article-item-detail
+                    <!--.article-item-detail-->
                     <div class="article-item-footer">
                         <div class="article-item-date">
                             <svg class="drlink-icon">
                                 <use xlink:href="#calendar"></use>
                             </svg>
-                            <span>4 اسفند 1400</span>
+                            <span>{{p.post_date }}</span>
                         </div>
-                        <a class="article-item-permalink" href="article.html">
+                        <a class="article-item-permalink" href="weblog/{{p.id}}/">
                             <span>بیشتر بخوانید</span>
                             <svg class="drlink-icon">
                             <use xlink:href="#arrow-left"></use>
