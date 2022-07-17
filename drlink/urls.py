@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('survery', include('survery.urls')),
     path('weblog', include('weblog.urls')),
+    path('contact-us', include('contact_us.urls')),
     
 ]

@@ -17,11 +17,11 @@ class survey(models.Model):
     )
 
 
-    full_name = models.CharField(max_length= 100)
-    age = models.CharField(max_length=50, choices= AGE_CHOICES)
-    clinic_name = models.CharField(max_length= 150)
-    education =  models.CharField(max_length= 150)
-    specialty =  models.CharField(max_length= 150)
+    full_name = models.CharField(max_length= 100 , blank=False)
+    age = models.CharField(max_length=50, choices= AGE_CHOICES, blank=False)
+    clinic_name = models.CharField(max_length= 150, blank=False)
+    education =  models.CharField(max_length= 150, blank=False)
+    specialty =  models.CharField(max_length= 150, blank=False)
 
     def __str__(self) -> str:
         return f"{self.full_name}"

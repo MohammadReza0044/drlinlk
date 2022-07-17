@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from multiprocessing import context
-from django.http import HttpResponseRedirect
+from django.core.exceptions import ValidationError
 
 
 from.models import survey
@@ -9,7 +9,7 @@ from.models import survey
 
 
 def survery_submit(request):
-    if request.method == 'POST':
+   if request.method == 'POST':
        name = request.POST ['full_name'] 
        age = request.POST ['age'] 
        clinic = request.POST ['clinic_name'] 
@@ -18,8 +18,8 @@ def survery_submit(request):
 
        new_survery = survey(full_name=name, age=age, clinic_name=clinic, education=education, specialty=specialty )
        new_survery.save()
-    
-    return render (request,'survery\survery.html', {})
+         
+   return render (request,'survery\survery.html', {})
 
 
 
