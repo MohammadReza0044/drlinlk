@@ -159,17 +159,18 @@
                     </p>
                 </div>
                 <form id="contactus_form" method="POST" class="comment-form">
+                    {% csrf_token %}
                     <div >
                         <div class="form-group name-group">
-                            <label class="required-field-label" for="sender_name">نام</label>
-                            <input  type="text"  placeholder="مثال: دکتر علیرضا آذر" id="sender_name"  class="sender-name  form-input-field required-field" name="sender_name" value=""/>
+                            <label class="required-field-label" for="name">نام</label>
+                            <input  type="text"  placeholder="مثال: دکتر علیرضا آذر" id="name"  class="sender-name  form-input-field required-field" name="name" value=""/>
                         </div>
                         <div class="form-group email-group">
-                            <label class="required-field-label" for="sender_email">ایمیل </label>
-                            <input  type="email" placeholder=" persian@gmail.com:مثال" id="sender_email" class="sender-email  form-input-field required-field"    name="sender_email" value="" />
+                            <label class="required-field-label" for="email">ایمیل </label>
+                            <input  type="email" placeholder=" persian@gmail.com:مثال" id="email" class="sender-email  form-input-field required-field"    name="email" value="" />
                         </div>
                     </div>
-                    <textarea  id="comment_msg" placeholder="متن خود را وارد کنید." class="form-control required-field" name="comment-msg" ></textarea>
+                    <textarea  id="text" placeholder="متن خود را وارد کنید." class="form-control required-field" name="text" ></textarea>
                     <input type="submit"  value="ارسال"/>
 
                 </form>
