@@ -1,0 +1,44 @@
+{% load jalali_tags %}
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}">
+	<script src="{% static 'admin/js/django_jalali.min.js' %}"></script>
+</head>
+
+<body>
+    <p>{{ request.user.date_joined|to_jalali:'%y/%m/%d _ %H:%M:%S' }}</p>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+    <input type="text" name="fname">   
+    <br>
+    <input type="text" name="clinic"> 
+    <br>
+    <input type="number" name="phone_number">  
+    <br>
+    <input type="date" name="date">   
+    <br>
+    <label for="date" id="date" name= "date">  {{ supportform }}
+    <br>
+    <input type="checkbox" name="time" value="بین ساعت 15 تا 16">  
+    <br>
+    <input type="checkbox" name="time" value="بین ساعت 17 تا 18"> 
+    <br>
+    <input type="checkbox" name="time" value="بین ساعت 19 تا 20"> 
+    
+    <br>
+
+    <input type="submit" value="Submit">
+
+
+    </form>
+</body>
+</html>
