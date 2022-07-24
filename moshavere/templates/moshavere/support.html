@@ -17,14 +17,20 @@
     <link rel="stylesheet" href="{% static 'Css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'Css/styles.css' %}" />
     <link rel="stylesheet" href="{% static 'Css/swiper-bundle.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}">
+    
 
-    <!-- <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script> -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- <script src="{% static 'js/bootstrap.min.js' %}"></script> -->
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
-    <script src="{% static 'admin/js/django_jalali.min.js' %}"></script>
 
+    <!-- By default, Datepicker using jQuery, you need to set your script after loading jQuery! -->
+	<!-- loading directly -->
+		<link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}">
+		<script src="{% static 'admin/js/django_jalali.min.js' %}"></script>
+	<!-- OR -->
+	<!-- loading by form (if used AdminJalaliDateWidget) -->
+		{{ form.media }}
+    
     
 	
 </head>
@@ -171,29 +177,26 @@
                 </p>
             </div>
             <!--.support-desc-->
-            <form id="customer_support_form">
+            <form id="customer_support_form" method="post">
+                {% csrf_token %}
                 
-               
-                <label class="required-field-label" for="fullName">نام و نام خانوادگی خود را  وارد کنید:</label>
-                <input type="text" id="full_name" class="required-field form-input-field" name="fullName" placeholder="مثال: دکتر علیرضا آذر">
+            
+                <label class="required-field-label" for="fullName">نام و نام خانوادگی خود را  وارد کنید:</label> {{form.full_name}}
+                
 
-                <label class="required-field-label" for="clinic">نام مطب یا کلینیک روانشناسی خود را وارد کنید:</label>
-                <input type="text" id="clinic_name" class="required-field form-input-field" name="clinic" placeholder="مثال: کلینیک دکتر علیرضا آذر یا مطب دکتر علیرضا آذر">
+                <label class="required-field-label" for="clinic">نام مطب یا کلینیک روانشناسی خود را وارد کنید:</label> {{form.clinic_name}}
+                
 
-                <label class="required-field-label" for="phone_number">شماره تماس خود را وارد کنید:</label>
-                <input type="text" id="phone_number"  name="phone_number" placeholder="مثال:09192345819 ">
+                <label class="required-field-label" for="phone_number">شماره تماس خود را وارد کنید:</label> {{form.phone_number}}
+                
                 <div class="req-date-container req-date-time"> 
                     <label for="support_date" class="required-field-label req-date-label">
-                        یکی از تاریخ های زیر را انتخاب کنید:
-                    </label> 
+                          تاریخ و ساعت خود را انتخاب کنید:
+                    </label> {{form.support_date}} {{form.support_time}}
+                    <br> <br> <br>
                     <p>
                         (کارشناسان ما در تاریخ و ساعت انتخاب شده ی شما، با شما تماس خواهند گرفت.)
                     </p>
-                    
-                    <!--.req-date-container-->
-
-                
-                    <!--.time-options-->
                 </div>
                 <!--.req-time-container-->
                 <input type="submit" value="ثبت">

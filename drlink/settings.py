@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'survery',
     'weblog',
     'contact_us',
-    'support',
+    'moshavere',
+    
+    
     
     
 ]
@@ -85,7 +87,7 @@ WSGI_APPLICATION = 'drlink.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mohammadreza',
+        'NAME': 'drlink_test',
         'USER': 'mohammadreza',
         'PASSWORD': '13690044',
         'HOST': 'localhost',
