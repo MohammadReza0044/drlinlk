@@ -14,7 +14,7 @@ class moshavere(models.Model):
     full_name= models.CharField(max_length=100, blank=False)
     clinic_name=models.CharField(max_length=200,  blank=False)
     phone_number=models.IntegerField(blank=False)
-    support_date =models.DateField( blank=False)
+    support_date =models.DateField(blank=False)
     support_time =models.CharField(max_length=100, choices=TIME_CHOICES, default=between9to12)
 
 
