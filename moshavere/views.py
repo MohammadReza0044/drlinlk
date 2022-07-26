@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-from .models import moshavere
 from .forms import supportForm
 
 def support_submit(request):
