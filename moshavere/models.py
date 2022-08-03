@@ -1,6 +1,7 @@
 from django.db import models
 
 
+
 class moshavere(models.Model):
     between9to12 = "بین ساعت 9 تا 12"
     between16to20 = "بین ساعت 16 تا 20"
@@ -14,7 +15,7 @@ class moshavere(models.Model):
     full_name= models.CharField(max_length=100, blank=False)
     clinic_name=models.CharField(max_length=200,  blank=False)
     phone_number=models.IntegerField(blank=False)
-    support_date =models.DateField(blank=False)
+    support_date =models.CharField(blank=False, max_length=10)
     support_time =models.CharField(max_length=100, choices=TIME_CHOICES, default=between9to12)
 
 

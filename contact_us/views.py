@@ -35,8 +35,7 @@ def contactUs_submit(request):
            headers = {}
 
            response = requests.request("POST", url, headers=headers, data=payload, files=files)
-
-        #    print(response.text)
+           
 
            return render (request,'contact_us/contact-us.html',{'form': form})
     else:
