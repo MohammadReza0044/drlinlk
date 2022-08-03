@@ -1,10 +1,13 @@
+# connect to drlink.crm24.io via api.
+# crm user = zargol ahmadi
+
 import json
 import requests
 import hashlib
 
 
 def get_token():
-    url = "https://drlink.crm24.io/webservice.php?operation=getchallenge&username=hi@drlink.ir"
+    url = "https://drlink.crm24.io/webservice.php?operation=getchallenge&username=zari.architect.eng@gmail.com"
 
     payload={}
     headers = {}
@@ -12,7 +15,8 @@ def get_token():
     response = requests.request("GET", url, headers=headers, data=payload)
     token = json.loads(response.text)
     token = token['result']['token']
-    return (str(token + 'vtTd7NZiOKnAMhU'))
+    return (str(token + 'M4iv9zEiYXi6lZ')) 
+    # token + crm accessKey
 
 
 def sessionName():
@@ -20,7 +24,7 @@ def sessionName():
     login_token = get_token() 
 
     payload={'operation': 'login',
-    'username': 'hi@drlink.ir',
+    'username': 'zari.architect.eng@gmail.com',
     'accessKey':hashlib.md5(login_token.encode('utf-8')).hexdigest(),}
     files=[
 
@@ -38,13 +42,15 @@ def sessionName():
 
 # payload={'sessionName': sessionName(),
 # 'operation': 'create',
-# 'elementType': 'Contacts',
+# 'elementType': 'Leads',
 # 'element': json.dumps({
-#     "assigned_user_id": "19x1",
-#     "firstname": "mohammad reza",
-#     "lastname": "shaygan",
-#     "mobile": "09370946898",
-#     "salutationtype": "mr"
+#     "assigned_user_id": "19x8",
+#     "lastname": 'test test',
+#     "cf_1198":"test22@test.com",
+#     "cf_1190":"سلام. من نیاز به مشاوره دارم.",
+#     "creator":"19x1"
+  
+    
 #   })
 
 # }

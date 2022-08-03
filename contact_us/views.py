@@ -1,25 +1,48 @@
 from django.shortcuts import render
+import requests
+import json
 
 from .models import contact_us
 from.forms import contactUs_form
+from .api import sessionName
 
 def contactUs_submit(request):
     if request.method == 'POST':
-        contactusform = contactUs_form(request.POST)
-        if contactusform.is_valid():
-            name = contactusform.cleaned_data['name'],
-            email = contactusform.cleaned_data['email'],
-            text = contactusform.cleaned_data['text']
-            new_contact = contact_us.objects.create(name = name,
-            email = email ,
-            text =  text)
+        form = contactUs_form(request.POST)
+        if form.is_valid():
+           form.save() 
+           data = form.cleaned_data
+           url = "https://drlink.crm24.io/webservice.php"
 
-            new_contact.save()
-            return render (request,'contact_us/contact-us.html',)
+           payload={'sessionName': sessionName(),
+            'operation': 'create',
+            'elementType': 'Leads',
+            'element': json.dumps({
+                "assigned_user_id": "19x8",
+                "lastname":data ['name'],
+                "cf_1198":data ['email'],
+                "cf_1190":data ['text'],
+                "creator":"19x8"
+            
+                
+              })
+
+            }
+
+           files=[
+
+            ]
+           headers = {}
+
+           response = requests.request("POST", url, headers=headers, data=payload, files=files)
+
+        #    print(response.text)
+
+           return render (request,'contact_us/contact-us.html',{'form': form})
     else:
-        contactusform = contactUs_form()  
+        form = contactUs_form()  
     
-    return render (request,'contact_us/contact-us.html',)
+    return render (request,'contact_us/contact-us.html',{'form': form})
 
               
 
@@ -27,16 +50,7 @@ def contactUs_submit(request):
 
 
 
-# def contactUs_submit(request):
-#    if request.method == 'POST':
-#        sender_name = request.POST ['sender_name'] 
-#        sender_email = request.POST ['sender_email'] 
-#        sender_text = request.POST ['sender_text'] 
-    
-#        new_contactUs = contact_us (name=sender_name, email=sender_email, text=sender_text)
-#        new_contactUs.save()
-         
-#    return render (request,'contact_us\contact-us.html', {})
+
 
 
 
