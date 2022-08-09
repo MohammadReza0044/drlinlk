@@ -1,5 +1,4 @@
-
-
+{% load jalali_tags %}
 
 {% load static %}
 <!DOCTYPE html>
@@ -20,9 +19,11 @@
     <link rel="stylesheet" href="{% static 'Css/swiper-bundle.min.css' %}" />
     
 
-    <!-- <script src="{% static 'js/bootstrap.min.js' %}"></script> -->
+    <!-- <script src="% static 'js/jquery-3.6.0.min.js' %}"></script> -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- By default, Datepicker using jQuery, you need to set your script after loading jQuery! -->
 	<!-- loading directly -->
@@ -199,6 +200,8 @@
                     </p>
                 </div>
                 <!--.req-time-container-->
+                <div class="g-recaptcha" data-sitekey="6Lc__1whAAAAAGpwqyrYsoXoV7TxP9ZEfg9JgYPE"></div>
+                <br>
                 <input type="submit" value="ثبت">
             </form>
            

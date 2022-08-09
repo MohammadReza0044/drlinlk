@@ -13,7 +13,7 @@ class supportForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(supportForm, self).__init__(*args, **kwargs)
         self.fields['support_date'] = JalaliDateField(label=('support_date'), # date format is  "yyyy-mm-dd"
-            # widget=AdminJalaliDateWidget # optional, to use default datepicker
+            widget=AdminJalaliDateWidget # optional, to use default datepicker
         )
 
         # you can added a "class" to this field for use your datepicker!

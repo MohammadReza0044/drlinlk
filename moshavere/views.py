@@ -24,7 +24,7 @@ def support_submit(request):
                 "lastname":data ['full_name'],
                 "cf_1192":data ['clinic_name'],
                 "mobile":data ['phone_number'],
-                "cf_1210":data['support_date'],
+                "cf_1210":str(data['support_date']),
                 "cf_1201":data ['support_time'],
                 "creator":"19x8"
             
@@ -33,7 +33,7 @@ def support_submit(request):
             
 
             }
-            print(payload)
+            
             files=[
 
             ]
