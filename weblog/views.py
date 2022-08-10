@@ -29,3 +29,8 @@ def post_detail(request,pk):
     return render(request, 'weblog/article.html', context=context)
     
 
+def search (request):
+    if request.method == 'GET':
+        q = request.GET.get('search')
+        post_list = Posts.objects.filter(post_title_fa__icontains = q)
+    return render (request, 'weblog/blog.html' , {'post_list':post_list})

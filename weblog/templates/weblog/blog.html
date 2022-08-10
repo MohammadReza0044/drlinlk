@@ -158,7 +158,7 @@
             </div>
             <!--.page-title-->
 
-            <form id="search_form" method="GET">
+            <form id="search_form" method="GET" action="{% url 'search' %}">
                 
                 <input name="search" type="text" placeholder="جستجو" >
                 <button type="submit">
@@ -166,14 +166,12 @@
                         <use xlink:href="#search-icon"></use>
                     </svg>
                 </button>
-                {% for Posts in Posts %}
-                <a> {{Posts.post_title_fa}} </a> 
-                {% endfor %}
+               
             </form>
-
-            <section class = "important-articles margin-b-main row">
+            
+            <!-- <section class = "important-articles margin-b-main row"> -->
                 <!-- <div class="row"> -->
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                         <article class="i-article i-article-small">
                             <a href="article.html" class="abs-fill"></a>
                             <img src="assets/images/art4.png" alt="articlle-img" />
@@ -220,8 +218,8 @@
                             </div>
                         </div>
                     </article>
-                <!-- </div> -->
-            </section>
+               </div> -->
+            <!-- </section>  -->
             <!--.important-articles-->
             <h3 class="blog-latest-articles-title custom-title">آخرین مطالب</h3>
             <section class="blog-latest-articles">
@@ -263,15 +261,15 @@
 
             <section class="articles-pagination">
 
-                </div>
+                <div class="row">
+                    {%for x in list_count%}
+                    <div class="col-sm-1">
+                        <button class="btn btn-success page" name="pagination{{x}}" id="pagination{{x}}" onclick="next({{x}})">{{x}}</button>
+                    </div>
+                    {%endfor%}
 
-                {%for x in list_count%}
-                <div class="col-sm-1">
-                <button class="btn btn-success page" name="pagination{{x}}" id="pagination{{x}}" onclick="next({{x}})">{{x}}</button>
                 </div>
-                {%endfor%}
-                </div>
-
+             
                 </section>
                 <script>
                 
@@ -304,62 +302,12 @@
                 for (var j=0; j<=9; j++){
                     $('#pagination'+j).css('display','block'); 
                 }
+
+                
                 </script>
 
-            <!-- <div class="pagination">
-                <span class="step-links">
-                {% if page_obj.has_previous %}
-                    <a href="?page=1">&laquo; first</a>
-                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-                {% endif %}
 
-                <span class="current">
-                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                </span>
-
-                {% if page_obj.has_next %}
-                    <a href="?page={{ page_obj.next_page_number }}">next</a>
-                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-                {% endif %}
-            </span>
-        </div> -->
-
-
-
-
-
-
-
-
-                <!-- <nav aria-label="...">
-                    <ul class="pagination"> -->
-                      <!-- <li class="page-item disabled ">
-                        <a class="page-link prev" href="#" tabindex="-1" aria-disabled="true">  
-                            <svg class="drlink-icon">
-                                <use xlink:href="#arrow-left1"></use>
-                            </svg>
-                        </a>
-                      </li> -->
-                      <!-- <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item" >
-                        <a class="page-link" href="#">2</a>
-                      </li>
-                      <li class="page-item extend"><a class="page-link" href="#">...</a></li>
-                      <li class="page-item ">
-                        <a class="page-link" href="#">28</a>
-                      </li>
-                      <li class="page-item ">
-                        <a class="page-link" href="#">29</a>
-                      </li>
-                      <li class="page-item ">
-                        <a class="page-link next" href="#">
-                            <svg class="drlink-icon ">
-                                <use xlink:href="#arrow-left1"></use>
-                            </svg>
-                        </a>
-                      </li>
-                    </ul>
-                </nav> -->
+                
 
             </section>
             <!--.articles-pagination-->
