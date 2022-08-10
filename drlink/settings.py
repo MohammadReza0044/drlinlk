@@ -169,3 +169,4 @@ JALALI_DATE_DEFAULTS = {
         }
     },
 }
+
