@@ -243,12 +243,6 @@
                                 <use xlink:href="#message"></use>
                             </svg>
                         </span>
-                        <span class="like-num">
-                            <span>196</span>
-                            <svg class="drlink-icon">
-                                <use xlink:href="#like"></use>
-                            </svg>
-                        </span>
                     </div>
                 </div>
                 <!--.article-controls-->
@@ -285,6 +279,16 @@
                         <br>
                         <input type="submit"  value="ارسال"/>
                 </form>
+                <div>
+                {% for c in comment %}
+
+                    <h2>{{c.author}}</h2>
+                   <h2>{{c.comment_content}}</h2>
+                    <h2>{{c.comment_date}}</h2>
+
+                {% endfor %}
+                </div>
+
                 <!--#article_send_comment-->
             </main>
             <!--main-->

@@ -1,6 +1,6 @@
 import math
 from django.shortcuts import render 
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404 , get_list_or_404
 from django.core.paginator import Paginator
 from django.views import View
 
@@ -16,8 +16,6 @@ def post_view(request):
     paginator = Paginator(posts, 9) # Show 25 contacts per page.
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-
-   
     return render(request, 'weblog/blog.html',  {'page_obj': page_obj})
 
 
@@ -29,7 +27,8 @@ def post_detail(request,post_name):
        comment_content_sender = request.POST ['comment_content'] 
 
        new_comment = Comments.objects.create(post=posts , author=author_sender, author_email=author_email_sender, comment_content=comment_content_sender)
-    return render(request, 'weblog/article.html', {'posts': posts})
+    comment = get_list_or_404 (Comments, post=posts)
+    return render(request, 'weblog/article.html', {'posts': posts, 'comment': comment})
     
         
                                          
