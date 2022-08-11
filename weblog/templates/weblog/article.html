@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html class="no-js" dir="rtl" lang="fa-IR">
 <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
@@ -17,10 +18,11 @@
     <link rel="stylesheet" href="{% static 'Css/styles.css' %}"/>
     <link rel="stylesheet" href="{% static 'Css/swiper-bundle.min.css' %}"/>
 
-    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    {% comment %} <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script> {% endcomment %}
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <svg width="0" height="0" class="hidden">
@@ -170,14 +172,14 @@
                             <use xlink:href="#edit-2"></use>
                         </svg>
                         <span>نویسنده: </span>
-                        <span>{{ post.user_id}} </span>
+                        <span>{{ posts.user_id}} </span>
                     </span>
                     <span class="article-publish-date">
                         <svg class="drlink-icon">
                             <use xlink:href="#calendar"></use>
                         </svg>
                         <span>انتشار: </span>
-                        <span>{{ post.post_date}}</span>
+                        <span>{{ posts.post_date}}</span>
                     </span>
                 </div>
                 <!--.article-info-->
@@ -200,7 +202,7 @@
                 
                 <div class="article-content">
                     <p>
-                        {{ post.post_content_fa }}  
+                        {{ posts.post_content_fa }}  
                     </p>                 
                 </div>
                 <!--.article-content-->
@@ -253,29 +255,34 @@
 
                 <h4 class="article-send-comm-title">دیدگاه شما:</h4>
                 <form id="article_send_comment" method="POST" class="comment-form">
+                    {% csrf_token %}
+                    
+                 
                         <div >
                             <div class="form-group name-group">
                                 <div class="palceholder">
-                                <label for="sender_name">نام</label>
+                                <label for="author">نام</label>
                                 <span class="star">*</span>
                                 </div>
-                                <input  type="text" id="sender_name"  class="sender-name form-control form-input-field required-field" name="sender-name" value=""/>
+                                <input  type="text" id="author"  class="sender-name form-control form-input-field required-field" name="author" value=""/>
                             </div>
                             <div class="form-group email-group">
                                 <div class="palceholder">
-                                <label for="sender_email">ایمیل </label>
+                                <label for="author_email">ایمیل </label> 
                                 <span class="star">*</span>
                                 </div>
-                                <input  type="email" id="sender_email" class="sender-email form-control form-input-field required-field"    name="sender-email" value="" />
+                                <input  type="email" id="author_email" class="sender-email form-control form-input-field required-field"    name="author_email" value="" />
                             </div>
                         </div>
                         <div class="form-group msg-group">
                             <div class="palceholder textarea-palceholder">
-                              <label for="comment_msg">دیدگاه خود را در این قسمت بنویسید. </label>
+                              <label for="comment_content">دیدگاه خود را در این قسمت بنویسید. </label> 
                               <span class="star">*</span>
                             </div>
-                            <textarea  id="comment_msg" class="form-control required-field" name="comment-msg" ></textarea>
+                            <textarea  id="comment_content" class="form-control required-field" name="comment_content" ></textarea>
                         </div>
+                        <div class="g-recaptcha" data-sitekey="6Lc__1whAAAAAGpwqyrYsoXoV7TxP9ZEfg9JgYPE"></div>
+                        <br>
                         <input type="submit"  value="ارسال"/>
                 </form>
                 <!--#article_send_comment-->
