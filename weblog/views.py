@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator
 from django.views import View
-from django.http import HttpResponseRedirect
+
 
 
 
@@ -26,8 +26,8 @@ def post_view(request):
     return render(request, 'weblog/blog.html',  {'posts': posts, 'list_count': list_count})
 
 
-def post_detail(request,pk):
-    posts = get_object_or_404 (Posts, pk=pk)
+def post_detail(request,post_name):
+    posts = get_object_or_404 (Posts, post_name=post_name)
     if request.method == 'POST':
        author_sender = request.POST ['author'] 
        author_email_sender = request.POST ['author_email'] 
@@ -37,27 +37,17 @@ def post_detail(request,pk):
     return render(request, 'weblog/article.html', {'posts': posts})
     
         
-
-
-                                                   
-    
+                                         
 
 def search (request):
     if request.method == 'GET':
-        q = request.GET.get('search')
-    post_list = Posts.objects.filter(post_title_fa__icontains = q)
-    return render (request, 'weblog/blog.html' , {'post_list':post_list})
+        query = request.GET.get('search')
+    post_result = Posts.objects.filter(media_description__icontains = query)
+
+    return render (request, 'weblog/blog.html' , {'post_result':post_result})
 
 
-# def comment_submit (request, pk):
-#     if request.method == 'POST':
-#        author_sender = request.POST ['author'] 
-#        author_email_sender = request.POST ['author_email'] 
-#        comment_content_sender = request.POST ['comment_content'] 
 
-#        new_comment = Comments(post=pk , author=author_sender, author_email=author_email_sender, comment_content=comment_content_sender)
-#        new_comment.save()
-#        return render (request,'weblog/article.html')
 
 
 
