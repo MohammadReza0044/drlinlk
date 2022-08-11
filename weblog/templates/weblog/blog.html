@@ -20,8 +20,8 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
     <svg width="0" height="0" class="hidden">
@@ -224,8 +224,8 @@
             <h3 class="blog-latest-articles-title custom-title">آخرین مطالب</h3>
             <section class="blog-latest-articles">
                      <!--.article-item-->
-                {% for p in posts %}
-                <article class="article-item"  id="posts{{forloop.counter0}}" >
+                {% for p in page_obj %}
+                <article class="article-item"  >
                     <a href='blog/{{p.post_name}}/' class="abs-fill"> </a>
                     <a href="blog/{{p.post_name}}/"  ><img src="{% static 'img/atricle2.png' %}" alt="articlle-img" /></a>
                     <div class="article-item-detail">
@@ -236,7 +236,7 @@
                             <span>نویسنده:</span><span> {{p.user_id}}</span>
                         </p>
                         <h2 class="article-item-title">{{p.post_title_fa}}</h2> </a>
-                        <p class="article-item-exerpt"> {{p.media_description }} </p>
+                        <p class="article-item-exerpt"> {{p.media_description}} </p>
                         
                     </div>
                     <!--.article-item-detail-->
@@ -290,61 +290,34 @@
                     </div>
 
                 </article>
-                {% endfor %}
+                 {% endfor %} 
 
-
+            <!--Pagination-->
             <section class="articles-pagination">
+  
+            <div class="container p-4">
+                <div class="pagination justify-content-center">
+                    <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1"> اولین صفحه|</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">قبلی</a>
+                    {% endif %}
 
-                <div class="row">
-                    {%for x in list_count%}
-                    <div class="col-sm-1">
-                        <button class="btn btn-success page" name="pagination{{x}}" id="pagination{{x}}" onclick="next({{x}})">{{x}}</button>
+                        <span class="current">
+                            صفحه ی  {{ page_obj.number }} از {{ page_obj.paginator.num_pages }}
+                        </span>
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">بعدی</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">|  آخرین صفحه </a>
+                    {% endif %}
+                    </span>
                     </div>
-                    {%endfor%}
-
                 </div>
-             
-                </section>
-                <script>
-                
-
-                function none(){
-                $('.article-item').css('display','none');
-                }
-                none();
-                var i = 0;
-                for(i;i<=5;i++)
-                {
-                $('#posts'+i).css('display','block');
-
-                }
-                function next(x)
-                {
-                x=x*6-1-5;
-                
-                none();
-                for (var i=0; i<=5; i++){
-                    $('#posts'+(x+i)).css('display','block');
-                }
-                
-                // $('#posts'+(x+1)).css('display','block');
-                }
-                function nexts(y){
-                y++
-                }
-                $('.page').css('display','none'); 
-                for (var j=0; j<=9; j++){
-                    $('#pagination'+j).css('display','block'); 
-                }
-
-                
-                </script>
-
-
-                
 
             </section>
-            <!--.articles-pagination-->
+            
+            <!--end of Pagination-->
             
 
 

@@ -12,18 +12,13 @@ from .forms import comment_form
 
 
 def post_view(request):
-    list_count= []
-    page = 20
     posts= Posts.objects.all()
-    count = posts.count()
-    half_count = math.ceil(count/6)
-   
+    paginator = Paginator(posts, 9) # Show 25 contacts per page.
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
-    for x in range(half_count):
-        list_count.append(x+1)
-    
    
-    return render(request, 'weblog/blog.html',  {'posts': posts, 'list_count': list_count})
+    return render(request, 'weblog/blog.html',  {'page_obj': page_obj})
 
 
 def post_detail(request,post_name):
@@ -43,7 +38,6 @@ def search (request):
     if request.method == 'GET':
         query = request.GET.get('search')
     post_result = Posts.objects.filter(media_description__icontains = query)
-
     return render (request, 'weblog/blog.html' , {'post_result':post_result})
 
 
