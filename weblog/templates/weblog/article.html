@@ -155,8 +155,8 @@
     <!--header-->
 
     <div class="single-page-blog container ">
-        <form id="search_form"  class="article-search-bar" action="" method="POST">
-            <input type="text" placeholder="جستجو" name="s">
+        <form id="search_form"  class="article-search-bar" action="{% url 'search' %}" method="GET">
+            <input type="text" placeholder="جستجو" name="search">
             <button type="submit">
                 <svg class="drlink-icon">
                     <use xlink:href="#search-icon"></use>
