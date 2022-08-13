@@ -227,7 +227,7 @@
                 {% for p in page_obj %}
                 <article class="article-item"  >
                     <a href='blog/{{p.post_name}}/' class="abs-fill"> </a>
-                    <a href="blog/{{p.post_name}}/"  ><img src="{{p.Files__id}}" alt="articlle-img" /></a>
+                    <a href="blog/{{p.post_name}}/"  ><img src="{% static 'img/atricle1.png' %}" alt="articlle-img" /></a>
                     <div class="article-item-detail">
                         <p class="article-item-author">
                             <svg class="drlink-icon">

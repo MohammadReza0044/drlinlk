@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'weblog',
     'contact_us',
     'moshavere',
+    'index',
     
     
     

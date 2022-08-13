@@ -23,6 +23,7 @@ urlpatterns = [
     path('blog', include('weblog.urls')),
     path('contact-us', include('contact_us.urls')),
     path('support', include('moshavere.urls')),
+    path('', include('index.urls')),
   
     
     
