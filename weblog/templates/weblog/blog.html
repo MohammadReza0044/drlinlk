@@ -227,7 +227,7 @@
                 {% for p in page_obj %}
                 <article class="article-item"  >
                     <a href='blog/{{p.post_name}}/' class="abs-fill"> </a>
-                    <a href="blog/{{p.post_name}}/"  ><img src="https://www.drlink.ir/uploads/{{p.media_name}}" alt="articlle-img" /></a>
+                    <a href="blog/{{p.post_name}}/"  ><img src="https://www.drlink.ir/uploads/{{p.media_name}}" alt="{{p.media_name}}" /></a>
                     <div class="article-item-detail">
                         <p class="article-item-author">
                             <svg class="drlink-icon">
@@ -258,40 +258,7 @@
                 {% endfor %}
                 <!-- .article-item -->
 
-                 <!-- .article-search_result -->
-                 {% for p in post_result %}
-                <article class="article-item"  id="posts{{forloop.counter0}}" >
-                    <a href='{{p.post_name}}/' class="abs-fill"> </a>
-                    <a href="{{p.post_name}}/"  ><img src="{% static 'img/atricle2.png' %}" alt="articlle-img" /></a>
-                    <div class="article-item-detail">
-                        <p class="article-item-author">
-                            <svg class="drlink-icon">
-                                <use xlink:href="#edit-2"></use>
-                            </svg>  
-                            <span>نویسنده:</span><span> {{p.user_id}}</span>
-                        </p>
-                        <h2 class="article-item-title">{{p.post_title_fa}}</h2> </a>
-                        <p class="article-item-exerpt"> {{p.media_description }} </p>
-                    </div>  
-
-                    <div class="article-item-footer">
-                        <div class="article-item-date">
-                            <svg class="drlink-icon">
-                                <use xlink:href="#calendar"></use>
-                            </svg>
-                            <span>{{p.post_date }}</span>
-                        </div>
-                        <a class="article-item-permalink" href="blog/{{p.post_name}}/">
-                            <span>بیشتر بخوانید</span>
-                            <svg class="drlink-icon">
-                            <use xlink:href="#arrow-left"></use>
-                          </svg>
-                        </a>
-                    </div>
-
-                </article>
-                 {% endfor %} 
-
+                 
             <!--Pagination-->
             <section class="articles-pagination">
   

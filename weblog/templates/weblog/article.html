@@ -1,3 +1,5 @@
+{% load jalali_tags %}
+
 {% load static %}
 <!DOCTYPE html>
 <html class="no-js" dir="rtl" lang="fa-IR">
@@ -19,7 +21,7 @@
     <link rel="stylesheet" href="{% static 'Css/swiper-bundle.min.css' %}"/>
     <link rel="stylesheet" href="{% static 'Css/comments.css' %}"/>
 
-    {% comment %} <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script> {% endcomment %}
+    <!--<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script> <!-->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
@@ -166,7 +168,7 @@
         </form>
         <div class="row">
             <main class="col-md-8  col-xs-12 post-content">
-                <h2 class="page-title-h custom-title">{{ post.post_title_fa }}</h2>
+                <h2 class="page-title-h custom-title">{{ post.post_title_fa}}</h2>
                 <div class="article-info">
                     <span class="article-author">
                         <svg class="drlink-icon">
@@ -184,7 +186,7 @@
                     </span>
                 </div>
                 <!--.article-info-->
-                <img src="{% static 'img/artcle-img.png' %}" alt="article featured image" class="article-featured" />
+                <img src="https://www.drlink.ir/uploads/{{posts.media_name}}" alt="{{posts.media_name}}" class="article-featured" />
 
                 <div class="artilce-sub-titles">
                     <ul>
@@ -285,11 +287,11 @@
           
                 </div>
                
-
+              
                 {% for c in comment %}
                 <div class="card mt-3">
                     <div class="card-header">
-                        {{c.comment_date}}
+                        {{c.get_jalali_date}}
                     </div>
                     <div class="card-body ">
                       <h5 class="card-title text-primary">{{c.author}}</h5>

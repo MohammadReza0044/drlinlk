@@ -224,10 +224,10 @@
             <h3 class="blog-latest-articles-title custom-title">  نتایج جستجو "{{query}} " </h3>
             <section class="blog-latest-articles">
                      <!--.article-item-->
-                {% for p in page_obj %}
+                {% for p in post_result %}
                 <article class="article-item"  >
-                    <a href='blog/{{p.post_name}}/' class="abs-fill"> </a>
-                    <a href="blog/{{p.post_name}}/"  ><img src="{{p.Files__id}}" alt="articlle-img" /></a>
+                    <a href='{{p.post_name}}/' class="abs-fill"> </a>
+                    <a href="{{p.post_name}}/"  ><img src="https://www.drlink.ir/uploads/{{p.media_name}}" alt="{{p.media_name}}" /></a>
                     <div class="article-item-detail">
                         <p class="article-item-author">
                             <svg class="drlink-icon">
