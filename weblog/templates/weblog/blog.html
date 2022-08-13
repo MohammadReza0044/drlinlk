@@ -227,7 +227,7 @@
                 {% for p in page_obj %}
                 <article class="article-item"  >
                     <a href='blog/{{p.post_name}}/' class="abs-fill"> </a>
-                    <a href="blog/{{p.post_name}}/"  ><img src="{% static 'img/atricle1.png' %}" alt="articlle-img" /></a>
+                    <a href="blog/{{p.post_name}}/"  ><img src="https://www.drlink.ir/uploads/{{p.media_name}}" alt="articlle-img" /></a>
                     <div class="article-item-detail">
                         <p class="article-item-author">
                             <svg class="drlink-icon">
@@ -295,21 +295,21 @@
             <!--Pagination-->
             <section class="articles-pagination">
   
-            <div class="container p-4">
+            <div class="container p-4 ">
                 <div class="pagination justify-content-center">
                     <span class="step-links">
                     {% if page_obj.has_previous %}
-                        <a href="?page=1"> اولین صفحه|</a>
+                        <a href="?page=1">اولین|</a>
                         <a href="?page={{ page_obj.previous_page_number }}">قبلی</a>
                     {% endif %}
 
                         <span class="current">
-                            صفحه ی  {{ page_obj.number }} از {{ page_obj.paginator.num_pages }}
+                            صفحه  {{ page_obj.number }} از {{ page_obj.paginator.num_pages }}
                         </span>
 
                     {% if page_obj.has_next %}
                         <a href="?page={{ page_obj.next_page_number }}">بعدی</a>
-                        <a href="?page={{ page_obj.paginator.num_pages }}">|  آخرین صفحه </a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}"> | آخرین</a>
                     {% endif %}
                     </span>
                     </div>
