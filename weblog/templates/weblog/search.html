@@ -169,58 +169,8 @@
                
             </form>
             
-            <!-- <section class = "important-articles margin-b-main row"> -->
-                <!-- <div class="row"> -->
-                    <!-- <div class="col-md-4">
-                        <article class="i-article i-article-small">
-                            <a href="article.html" class="abs-fill"></a>
-                            <img src="assets/images/art4.png" alt="articlle-img" />
-                            <div class="i-article-detail">
-                                <div>
-                                    <h2 class="article-item-title ">فرمول 5 مرحله‌ای استخدام پرسنل کلینیک</h2>
-                                    <span class="article-item-permalink">
-                                        <span>بیشتر بخوانید</span>
-                                        <svg class="drlink-icon">
-                                            <use xlink:href="#arrow-left"></use>
-                                        </svg>
-                                    </span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="i-article i-article-small">
-                            <a href="article.html" class="abs-fill"></a>
-                            <img src="assets/images/art2.png" alt="articlle-img" />
-                            <div class="i-article-detail">
-                                <div>
-                                    <h2 class="article-item-title ">فرمول 5 مرحله‌ای استخدام پرسنل کلینیک</h2>
-                                    <span class="article-item-permalink">
-                                        <span>بیشتر بخوانید</span>
-                                        <svg class="drlink-icon">
-                                            <use xlink:href="#arrow-left"></use>
-                                        </svg>
-                                    </span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <article class="col-md-8 i-article i-article-big">
-                        <a href="article.html" class="abs-fill"></a>
-                        <img src="assets/images/i-article1.png" alt="articlle-img" />
-                        <div class="i-article-detail">
-                            <div>
-                                <h2 class="article-item-title ">فرمول 5 مرحله‌ای استخدام پرسنل کلینیک</h2>
-                                <span class="article-item-permalink">
-                                    <span>بیشتر بخوانید</span>
-                                    <svg class="drlink-icon">
-                                        <use xlink:href="#arrow-left"></use>
-                                    </svg>
-                                </span>
-                            </div>
-                        </div>
-                    </article>
-               </div> -->
-            <!-- </section>  -->
-            <!--.important-articles-->
+            
+            <!--.search_result-articles-->
             <h3 class="blog-latest-articles-title custom-title">  نتایج جستجو "{{query}} " </h3>
             <section class="blog-latest-articles">
                      <!--.article-item-->
@@ -258,40 +208,7 @@
                 {% endfor %}
                 <!-- .article-item -->
 
-                 <!-- .article-search_result -->
-                 {% for p in post_result %}
-                <article class="article-item"  id="posts{{forloop.counter0}}" >
-                    <a href='{{p.post_name}}/' class="abs-fill"> </a>
-                    <a href="{{p.post_name}}/"  ><img src="{% static 'img/atricle2.png' %}" alt="articlle-img" /></a>
-                    <div class="article-item-detail">
-                        <p class="article-item-author">
-                            <svg class="drlink-icon">
-                                <use xlink:href="#edit-2"></use>
-                            </svg>  
-                            <span>نویسنده:</span><span> {{p.user_id}}</span>
-                        </p>
-                        <h2 class="article-item-title">{{p.post_title_fa}}</h2> </a>
-                        <p class="article-item-exerpt"> {{p.media_description }} </p>
-                    </div>  
-
-                    <div class="article-item-footer">
-                        <div class="article-item-date">
-                            <svg class="drlink-icon">
-                                <use xlink:href="#calendar"></use>
-                            </svg>
-                            <span>{{p.post_date }}</span>
-                        </div>
-                        <a class="article-item-permalink" href="blog/{{p.post_name}}/">
-                            <span>بیشتر بخوانید</span>
-                            <svg class="drlink-icon">
-                            <use xlink:href="#arrow-left"></use>
-                          </svg>
-                        </a>
-                    </div>
-
-                </article>
-                 {% endfor %} 
-            
+                 <!--.end of search_result-articles--> 
 
         
         </div>
