@@ -167,19 +167,12 @@
                 
                 <div class="article-content">
                     <p>
-                        {{ posts.post_content_fa }}  
+                        {{ posts.post_content_fa|safe }}
                     </p>                 
                 </div>
                 <!--.article-content-->
 
-                <div class="article-tags">
-                    <span>برچسب‌ها: </span>
-                    <a href="#">کسب و کار</a>
-                    <a href="#">زنان</a>
-                    <a href="#">کودک</a>
-                </div>
-               
-                <!--.article-tags-->
+                
 
                 <div class="article-controls">
                     <div class="article-share-links">
@@ -203,7 +196,7 @@
 
                     <div class="article-like-controls">
                         <span class="comment-num">
-                            8
+                            {{comment.count}}
                             <svg class="drlink-icon">
                                 <use xlink:href="#message"></use>
                             </svg>
@@ -223,22 +216,22 @@
                                 <label for="author">نام</label> 
                                 <span class="star">*</span>
                                 </div>
-                                <input  type="text" id="author"  class="sender-name form-control form-input-field required-field" name="author" value=""/>
+                                <input  type="text" id="author"  class="sender-name form-control form-input-field required-field" name="author" value="" placeholder="نام و نام خانوادگی"/>
                             </div>
                             <div class="form-group email-group">
                                 <div class="palceholder">
                                 <label for="author_email">ایمیل </label> 
                                 <span class="star">*</span>
                                 </div>
-                                <input  type="email" id="author_email" class="sender-email form-control form-input-field required-field"    name="author_email" value="" />
+                                <input  type="email" id="author_email" class="sender-email form-control form-input-field required-field"    name="author_email" value="" placeholder="ایمیل" />
                             </div>
                         </div>
                         <div class="form-group msg-group">
                             <div class="palceholder textarea-palceholder">
-                              <label for="comment_content">دیدگاه خود را در این قسمت بنویسید. </label> 
+                              <label for="comment_content" </label> 
                               <span class="star">*</span>
                             </div>
-                            <textarea  id="comment_content" class="form-control required-field" name="comment_content" ></textarea>
+                            <textarea  id="comment_content" class="form-control required-field" name="comment_content" placeholder="دیدگاه خود را در این قسمت بنویسید."></textarea>
                         </div>
                         <div class="g-recaptcha" data-sitekey="6Lc__1whAAAAAGpwqyrYsoXoV7TxP9ZEfg9JgYPE"></div>
                         <br>
@@ -293,15 +286,8 @@
                     </h3>
                     <nav>
                         <ul class="most-visited-articles">
-                            <li><a href="#">برند و برندسازی در پزشکی </a></li>
-                            <li><a href="#">10 روش افزایش بازدید در اینستاگرام مخصوص پزشکان</a></li>
-                            <li><a href="#">استخدام نیروی فروش </a></li>
-                            <li><a href="#">مشتری محور باشید!</a></li>
-                            <li><a href="#">هفت موضوع کلیدی برای تاسیس یک کلینیک درمانی</a></li>
-                            <li><a href="#">ضرورت باشگاه مشتریان برای کلینیک شما</a></li>
-                            <li><a href="#">ارتقاء مهارت‌های پزشکی راهی برای جذب بیمار </a></li>
-                            <li><a href="#">اهمیت ویدئو مارکتینگ در خدمات پزشکی  </a></li>
-                            <li><a href="#">آنچه که درباره طراحی وب‌سایت پزشکی باید بدانید </a></li>
+                            <li><a href="#"<></a></li>
+                            
                         </ul>
                         <!--.most-visited-articles-->
                     </nav>

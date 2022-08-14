@@ -2,7 +2,8 @@
 class footer extends HTMLElement{
     connectedCallback() { 
         this.innerHTML=
-      `    <footer class="site-footer">
+      ` {% load jalali_tags %}    
+      <footer class="site-footer">
       <div class="container  site-footer-content">
           <a href="/" class="site-footer-logo">
               <span class="logo-first-part">دکتر</span>
@@ -30,8 +31,8 @@ class footer extends HTMLElement{
                   <p>سیستم هوشمند مدیریت مطب، کلینیک و بیمارستان دکتر لینک با قدرت تمام و اطمینان در دنیای پزشکی همواره در تلاش است تا با آخرین دستاورد های دنیای تکنولوژی IT مسیر روشنی در جهت مدیریت آسان و حرفه ای برای مدیران و پزشکان مراکز درمانی ایجاد کند. این سیستم هوشمند در مدیریت مطب، کلینیک و بیمارستان میتواند نقش مهمی را برای جذب بیمار و وفادارسازی مراجعین ایفا کند.</p>
               </div>
               <div class="site-footer-enamad col-xxl-2">
-                  <a href="#"><img src="assets/images/enamad1.png" /></a>
-                  <a href="#"><img src="assets/images/enamad2.png" /></a>
+                  <a href="#"><img src="{% static img/enamad1.png %}" /></a>
+                  <a href="#"><img src="{% static img/enamad2.png %}" /></a>
               </div>
           </div>
           <!--.site-footer-detail-->

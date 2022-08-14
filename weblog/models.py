@@ -22,7 +22,7 @@ class Posts(models.Model):
 
 
 
-class Comments(models.Model):
+class post_Comments(models.Model):
     approved = "approved"
     disapproved = "disapproved"
   
@@ -47,16 +47,6 @@ class Comments(models.Model):
     class Meta:
         ordering = ['-comment_date']
         app_label = 'weblog'
-        db_table = 'comments'
+        db_table = 'post_Comments'
 
 
-class Files(models.Model):
-    id = models.IntegerField(primary_key=True)
-    post = models.ForeignKey(Posts, related_name='img', on_delete=models.CASCADE,)
-    name = models.CharField(max_length=255, db_collation='utf8_general_ci', blank=True, null=True)
-    type = models.CharField(max_length=255)
-    time = models.IntegerField()
-
-    class Meta:
-        app_label = 'weblog'
-        db_table = 'files'
