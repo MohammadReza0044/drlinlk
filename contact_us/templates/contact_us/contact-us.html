@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{% static 'Css/styles.css' %}"/>
     <link rel="stylesheet" href="{% static 'Css/swiper-bundle.min.css' %}"/>
 
-    {% comment %} <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>   {% endcomment %}
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script> 
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
@@ -176,7 +176,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 col-xs-12 col-sm-5">
-                        <img src="assets/images/address-map.png" alt="address map" />
+                        <img src="{% static 'img/address-map.png' %}" alt="address map" />
                     </div>
                 </div>
                 <!--.address-part-->
@@ -225,10 +225,7 @@
         </div>
     </div>
     <!--#support_form_modal-->
-    <div class="product-purchase-link-container">
-        <div class="container"> 
-            <a href="#" class=" product-purchase-link-fixed">مشاوره با ما</a>
-        </div>
+    
     </div>
 </body>
 </html>

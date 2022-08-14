@@ -24,7 +24,7 @@ urlpatterns = [
     path('contact-us', include('contact_us.urls')),
     path('support', include('moshavere.urls')),
     path('', include('index.urls')),
-  
+     path('', include('static_pages.urls')),
     
     
 ]

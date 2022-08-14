@@ -2,8 +2,7 @@
 class footer extends HTMLElement{
     connectedCallback() { 
         this.innerHTML=
-      ` {% load jalali_tags %}    
-      <footer class="site-footer">
+      ` <footer class="site-footer">
       <div class="container  site-footer-content">
           <a href="/" class="site-footer-logo">
               <span class="logo-first-part">دکتر</span>
@@ -19,9 +18,9 @@ class footer extends HTMLElement{
                   <nav>
                       <ul>
                           <li><a href='/'>دکتر لینک</a></li>
-                          <li><a href="contact-us">درباره ما</a></li>
-                          <li><a href="rules.html">قوانین و مقررات </a></li>
-                          <li><a href="privacy.html">حریم خصوصی</a></li>
+                          <li><a href="/about-us">درباره ما</a></li>
+                          <li><a href="/rules">قوانین و مقررات </a></li>
+                          <li><a href="/privacy">حریم خصوصی</a></li>
                       </ul>
                   </nav>
               </div>
@@ -38,33 +37,24 @@ class footer extends HTMLElement{
           <!--.site-footer-detail-->
 
           <div class="footer-copyright">
-              <p>تمامی حقوق این سایت مربوط به <a href="/"> دکتر لینک </a>می باشد.  </p>
+              <p>تمامی حقوق این سایت مربوط به <a href='/'> دکتر لینک </a>می باشد.  </p>
               <div class="social-media-links">
-                  <a href="#" title ="linkedin">
+                  <a href="https://www.linkedin.com/company/13298799" title ="linkedin" target="blank">
                       <svg class="drlink-icon">
                           <use xlink:href="#linkedin"></use>
                       </svg>
                   </a>
-                  <a href="#" title ="whatsapp">
+                  <a href="https://wa.me/989392230048" title ="whatsapp" target="blank">
                       <svg class="drlink-icon">
                           <use xlink:href="#whatsapp"></use>
                       </svg>
                   </a>
-                  <a href="#" title ="instagram">
+                  <a href="https://www.instagram.com/dr.link.crm/" title ="instagram" target="blank">
                       <svg class="drlink-icon">
                           <use xlink:href="#instagram"></use>
                       </svg>
                   </a>
-                  <a href="#" title ="twitter">
-                      <svg class="drlink-icon">
-                          <use xlink:href="#twitter"></use>
-                      </svg>
-                  </a>
-                  <a href="#" title="telegram">
-                      <svg class="drlink-icon">
-                          <use xlink:href="#telegram"></use>
-                      </svg>
-                  </a>
+                  
               </div>
           </div>
           <!--.footer-copyright-->
@@ -99,10 +89,10 @@ class header extends HTMLElement{
               <nav>
                   <ul class="top-menu">
                       <li><a href="/">صفحه اصلی</a></li>
-                      <li><a href="about-product.html">معرفی محصول</a></li>
+                      <li><a href="/about-product">معرفی محصول</a></li>
                       <li><a href="/support">درخواست مشاوره رایگان</a></li>
                       <li><a href="/blog">بلاگ</a></li>
-                      <li><a href="about-us.html">درباره ما</a></li>
+                      <li><a href="/about-us">درباره ما</a></li>
                       <li><a href="/contact-us">ارتباط با ما</a></li>
                   </ul>
               </nav>

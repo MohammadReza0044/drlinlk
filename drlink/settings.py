@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'contact_us',
     'moshavere',
     'index',
+    'static_pages',
     
     
     
