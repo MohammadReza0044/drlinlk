@@ -3,11 +3,17 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404 
 from django.core.paginator import Paginator
 from django.views import View
+import datetime
+import jdatetime
 
+
+from jalali_date import datetime2jalali, date2jalali
 
 
 from .models import Posts , post_Comments
 from .forms import comment_form
+
+
 
 
 def post_view(request):
@@ -20,6 +26,13 @@ def post_view(request):
 
 def post_detail(request,post_name):
     posts = get_object_or_404 (Posts,post_name=post_name )
+    most_visit_obj=Posts.objects.all().order_by('-post_visit')[0:10]
+    relative_posts = Posts.objects.filter(category_id = posts.category_id).order_by('post_modified')[0:10]
+    print(most_visit_obj)
+    datestring = posts.post_date
+    modify = posts.post_modified
+    dt = datetime.datetime.fromtimestamp(float(datestring))
+    mt = datetime.datetime.fromtimestamp(float(modify))
     if request.method == 'POST':
         form = comment_form(request.POST)
         if form.is_valid():
@@ -29,8 +42,7 @@ def post_detail(request,post_name):
             form.save(commit=False)
             new_comment = post_Comments.objects.create(post=posts , author=author, author_email=author_email, comment_content=comment_content)
     comment = post_Comments.objects.filter (post=posts, status='approved')
-    return render(request, 'weblog/article.html', {'posts': posts, 'comment': comment})
-    
+    return render(request, 'weblog/article.html', {'posts': posts, 'comment': comment, 'dt':dt, 'mt':mt, 'relative_posts':relative_posts,'most_visit_obj':most_visit_obj})
         
                                          
 
@@ -38,13 +50,15 @@ def search (request):
     if request.method == 'GET':
         query = request.GET.get('search')
     post_result = Posts.objects.filter(media_description__icontains = query)
+    
+    
     return render (request, 'weblog/search.html' , {'post_result':post_result, 'query':query})
 
 
-from jalali_date import datetime2jalali, date2jalali
+
+
 
 def my_view(request):
 	jalali_join = datetime2jalali(request.user.date_joined).strftime('%y/%m/%d _ %H:%M:%S')
-
 
 

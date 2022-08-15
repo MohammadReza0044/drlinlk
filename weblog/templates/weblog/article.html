@@ -138,31 +138,25 @@
                         </svg>
                         <span>نویسنده: </span>
                         <span>{{ posts.user_id}} </span>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <span>تعداد بازدید: </span>
+                        <span>{{ posts.post_visit }} </span>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <span>آخرین ویرایش : </span>
+                        <span>{{mt.day}} /{{mt.month}}</span>/ {{mt.year}} </span>
                     </span>
                     <span class="article-publish-date">
                         <svg class="drlink-icon">
                             <use xlink:href="#calendar"></use>
                         </svg>
                         <span>انتشار: </span>
-                        <span>{{ posts.post_date}}</span>
+                        <span>{{dt.day}} /{{dt.month}}</span>/ {{dt.year}}</span>
                     </span>
                 </div>
                 <!--.article-info-->
                 <img src="https://www.drlink.ir/uploads/{{posts.media_name}}" alt="{{posts.media_name}}" class="article-featured" />
 
-                <div class="artilce-sub-titles">
-                    <ul>
-                        <li>
-                            <a href="#title_1" class="content-header">مطالعه رزومه یا تماس تلفنی</a>
-                        </li>
-                        <li>
-                            <a href="#title_1" class="content-header">سوالات کتبی </a>
-                        </li>
-                        <li>
-                            <a href="#title_3" class="content-header">مصاحبه شفاهی</a>
-                        </li>
-                    </ul>          
-                </div>
+               
                 <!--.artilce-sub-titles-->
                 
                 <div class="article-content">
@@ -264,15 +258,9 @@
                     </h3>
                     <nav>
                         <ul class="related-articles">
-                            <li><a href="#">برند و برندسازی در پزشکی </a></li>
-                            <li><a href="#">10 روش افزایش بازدید در اینستاگرام مخصوص پزشکان</a></li>
-                            <li><a href="#">استخدام نیروی فروش </a></li>
-                            <li><a href="#">مشتری محور باشید!</a></li>
-                            <li><a href="#">هفت موضوع کلیدی برای تاسیس یک کلینیک درمانی</a></li>
-                            <li><a href="#">ضرورت باشگاه مشتریان برای کلینیک شما</a></li>
-                            <li><a href="#">ارتقاء مهارت‌های پزشکی راهی برای جذب بیمار </a></li>
-                            <li><a href="#">اهمیت ویدئو مارکتینگ در خدمات پزشکی  </a></li>
-                            <li><a href="#">آنچه که درباره طراحی وب‌سایت پزشکی باید بدانید </a></li>
+                            {%for i in relative_posts %}
+                            <li><a href="/blog/{{i.post_name}}/">{{i.post_title_fa}}</a></li>
+                            {% endfor %}
                         </ul>
                         <!--.related-articles-->
                     </nav>
@@ -286,7 +274,10 @@
                     </h3>
                     <nav>
                         <ul class="most-visited-articles">
-                            <li><a href="#"<></a></li>
+                        {% for j in most_visit_obj %}
+                           
+                            <li><a href="/blog/{{j.post_name}}/"<>{{j.post_title_fa}}</a></li>
+                        {% endfor %}
                             
                         </ul>
                         <!--.most-visited-articles-->

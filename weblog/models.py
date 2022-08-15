@@ -16,6 +16,9 @@ class Posts(models.Model):
     post_modified = models.BigIntegerField()
     post_visit = models.IntegerField(blank=True, null=True)
 
+    def get_jalali_date(self):
+        return date2jalali (self.post_date)
+
     class Meta:
         app_label = 'weblog'
         db_table = 'posts'
