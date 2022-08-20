@@ -1,23 +1,24 @@
+from django.db.models import Count
 import math
 from django.shortcuts import render 
 from django.shortcuts import get_object_or_404 
 from django.core.paginator import Paginator
 from django.views import View
-import datetime
-import jdatetime
+from datetime import datetime , timedelta
+
 
 
 from jalali_date import datetime2jalali, date2jalali
 
 
-from .models import Posts , post_Comments
+from .models import Posts , post_Comments , Visitors
 from .forms import comment_form
 
 
 
 
 def post_view(request):
-    posts= Posts.objects.all()
+    posts= Posts.objects.all().order_by('-post_date')
     paginator = Paginator(posts, 9) # Show 9 contacts per page.
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -25,14 +26,17 @@ def post_view(request):
 
 
 def post_detail(request,post_name):
-    posts = get_object_or_404 (Posts,post_name=post_name )
-    most_visit_obj=Posts.objects.all().order_by('-post_visit')[0:10]
-    relative_posts = Posts.objects.filter(category_id = posts.category_id).order_by('post_modified')[0:10]
-    print(most_visit_obj)
+    posts = get_object_or_404 (Posts,post_name=post_name)
+    # most_visit_obj=Posts.objects.all().order_by('-post_visit')[0:10]
+    most_visit_obj = Visitors.objects.filter(page__contains="blog/").order_by('visit_time')[0:10]
+    print (most_visit_obj)
+
+
+    relative_posts = Posts.objects.filter(category_id = posts.category_id).order_by('-post_date')[0:10]
     datestring = posts.post_date
     modify = posts.post_modified
-    dt = datetime.datetime.fromtimestamp(float(datestring))
-    mt = datetime.datetime.fromtimestamp(float(modify))
+    dt = datetime.fromtimestamp(float(datestring))
+    mt = datetime.fromtimestamp(float(modify))
     if request.method == 'POST':
         form = comment_form(request.POST)
         if form.is_valid():

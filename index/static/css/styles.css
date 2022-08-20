@@ -3273,6 +3273,7 @@ input[type=radio]:checked::before {
 
   .sidenav {
     display: block;
+    margin-left: 790px;
     background: #002B6E;
     width: 0;
     position: fixed;
@@ -3282,11 +3283,12 @@ input[type=radio]:checked::before {
     left: 0;
     -ms-transition: 0.5s;
     transition: 0.5s;
+
   }
 
   .sidenav > div {
     position: relative;
-    width: 100%;
+    margin-left: 790px;
     height: 100%;
     overflow: hidden;
     display: flex;
@@ -3303,6 +3305,7 @@ input[type=radio]:checked::before {
   }
 
   .sidenav .top-menu-side li a {
+    margin-left: 400px;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
@@ -4495,3 +4498,4 @@ input[type=radio]:checked::before {
     font-size: 14px;
   }
 }/*# sourceMappingURL=styles.css.map */
+

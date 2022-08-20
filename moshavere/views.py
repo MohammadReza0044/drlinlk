@@ -1,8 +1,8 @@
-from django.http import JsonResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 import requests
 import json
-
+from django.contrib import messages
 
 
 from .forms import supportForm
@@ -13,6 +13,7 @@ def support_submit(request):
         form = supportForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'با موفقیت ثبت شد')
             data = form.cleaned_data
             url = "https://drlink.crm24.io/webservice.php"
 
@@ -42,7 +43,7 @@ def support_submit(request):
             response = requests.request("POST", url, headers=headers, data=payload, files=files)
            
          
-            return render (request,'moshavere/support.html',{'form': form})
+            return HttpResponseRedirect('')
     else:
         form = supportForm()
     

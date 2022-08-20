@@ -53,3 +53,15 @@ class post_Comments(models.Model):
         db_table = 'post_Comments'
 
 
+class Visitors(models.Model):
+    ip = models.CharField(max_length=16)
+    visit_time = models.BigIntegerField()
+    browser = models.CharField(max_length=255)
+    device = models.CharField(max_length=255)
+    page = models.CharField(max_length=255)
+    version = models.CharField(max_length=255)
+    paltform = models.CharField(max_length=255)
+
+    class Meta:
+        app_label = 'weblog'
+        db_table = 'visitors'

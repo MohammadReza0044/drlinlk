@@ -4,22 +4,20 @@
 <!DOCTYPE html>
 <html class="no-js" dir="rtl" lang="fa-IR">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
-    <meta name="description" content=""/>
-    <meta name="subject" content=""/>
+    <meta name="سیستم جامع و یکپارچه مدیریت مراکز رواشناسی، جذب مراجع و درمانجو، نوبت دهی آنلاین و حضوری، حسابرسی دقیق درمانگران و برگزاری کارگاه و گروه درمانی" content=""/>
     <meta name="language" content="" />
     <meta http-equiv="Cache-Control" content="no-cache" />
-  
-    <title>DRlink</title>
+    <title>دکتر لینک | Dr. Link | سیستم جامع مدیریت مراکز روانشناسی</title>
 
-    <link rel="stylesheet" href="{% static 'Css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'Css/styles.css' %}" />
-    <link rel="stylesheet" href="{% static 'Css/swiper-bundle.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
     
 
-    <!-- <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script> -->
+    {% comment %} <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script> {% endcomment %}
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
@@ -143,6 +141,14 @@
                 </p>
             </div>
             <!--.support-desc-->
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li styles="color: blue" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <br> <br>
             <form id="customer_support_form" method="post">
                 {% csrf_token %}
                             
@@ -163,12 +169,12 @@
                         (کارشناسان ما در تاریخ و ساعت انتخاب شده ی شما، با شما تماس خواهند گرفت.)
                     </p>
                 </div>
-                <!--.req-time-container-->
-                <div class="g-recaptcha" data-sitekey="6Lc__1whAAAAAGpwqyrYsoXoV7TxP9ZEfg9JgYPE"></div>
+ 
+                <div class="g-recaptcha" data-sitekey="6LcqFpEhAAAAADmC60MZBUMoancAsqJLcWGA3mKY"></div>
                 <br>
                 <input type="submit" value="ثبت">
             </form>
-           
+   
     </main>
     <!--main-->
 

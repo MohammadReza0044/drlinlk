@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'drlink.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'drlink_test',
+        'NAME': 'drlink_final',
         'USER': 'mohammadreza',
         'PASSWORD': '13690044',
         'HOST': 'localhost',
