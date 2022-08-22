@@ -1,16 +1,16 @@
+{% extends 'base.html' %}
 {% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html class="no-js" dir="rtl" lang="fa-IR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
-    <meta name="description" content=""/>
-    <meta name="subject" content=""/>
+    <meta name="سیستم جامع و یکپارچه مدیریت مراکز رواشناسی، جذب مراجع و درمانجو، نوبت دهی آنلاین و حضوری، حسابرسی دقیق درمانگران و برگزاری کارگاه و گروه درمانی" content=""/>
     <meta name="language" content="" />
     <meta http-equiv="Cache-Control" content="no-cache" />
-
-    <title>DRlink</title>
+    <title>دکتر لینک | Dr. Link | سیستم جامع مدیریت مراکز روانشناسی</title>
 
     <link rel="stylesheet" href="{% static 'Css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'Css/styles.css' %}" />
@@ -111,65 +111,26 @@
         </symbol>
       </svg>
     <div class="site-wrap" id="site_wrap">
-        <header>
-            <div class="site-header ">
-                <div class="container">
-                    <h1 class="site-logo">
-                        <a href="/">
-                            <span class="logo-first-part">دکتر</span>
-                            <span class="logo-last-part">لینک</span>
-                        </a>
-                    </h1>
-                    <nav>
-                        <ul class="top-menu">
-                            <li><a href="/">صفحه اصلی</a></li>
-                            <li><a href="/about-product">معرفی محصول</a></li>
-                            <li><a href="/support">درخواست مشاوره رایگان</a></li>
-                            <li><a href="/blog">بلاگ</a></li>
-                            <li><a href="/about-us">درباره ما</a></li>
-                            <li><a href="/contact-us">ارتباط با ما</a></li>
-                        </ul>
-                    </nav>
-                    <a href="/support" class="product-purchase-link" >مشاوره با ما</a>
-                </div>
-            </div>
-            <!--.site-header-->
-    
-            <div class="mobile-header">
-                <div class="container ">
-                    <h1 class="mobile-header-logo">
-                        <a href="/">
-                            <span class="logo-first-part">دکتر</span>
-                            <span class="logo-last-part">لینک</span>
-                        </a>
-                    </h1>
-                    <span  class="menu-icon-res res-menu-control">
-                        <svg><use xlink:href="#menu"></use></svg>
-                    </span>    
-                </div>
-            </div>
-            <!-- .mobile-header -->
-        </header>
+        <my-header> </my-header>
         <!--header-->
 
     <main class="container page-content ">
         <!--.page-title-->
         <div class="page-title aboutus-title">
-            <h2 class="custom-title  custom-title">درباره ما</h2>
+                <h2 class="custom-title  custom-title">درباره ما</h2>
             <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-            </p>
+            دکترلینک  <span style="color:green"> <b>از یک حس متفاوت شروع شد</b> </span> وقتی فهمیدیم می توانیم دنیا را به جایی بهتر تبدیل کنیم. سال ۱۳۸۹ با هدف طراحی یک سامانه حرفه ای و یکپارچه مدیریت درمان، دکترلینک را پایه گذاری کردیم. همیشه سعی کرده ایم با افرادی همکاری کنیم که همگی با <span style="color:green"> <b>تغییر</b> </span>  موافق باشند. دکترلینک یک محصول تحت وب که با تکنولوژی های بروز و زیرساخت مدرن و <span style="color:red"> <b>لایه های امنیتی قوی</b> </span>تلاش می کند کلیه ساختار های <span style="color:blue"> <b>مدیریتی یک مرکز روانشناسی</b> </span>را پوشش دهد.             </p>
         </div>
         <!--.ap-title-->
         <section class="team-members">
             <h2 class="team-members-title aboutus-sec-title  custom-title">تیم دکتر لینک</h2>
             <div class="team-members-content">
                 <article class="team-members-item">
-                   <img src="{% static 'img/mem-a1.png' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
+                   <img src="{% static 'img/mem-a6.jpg' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
                    <div class="member-contact-info">
                        <div class="mem-name">
-                           <p>خانم سلمیانی</p>
-                           <h3>مدیر R&D</h3>
+                           <p>سعید بیگی</p>
+                           <h3>بنیانگذار</h3>
                        </div>
                        <div class="mem-social-links">
                             <a href="#" title ="linkedin">
@@ -197,8 +158,8 @@
                     <img src="{% static 'img/mem-a2.png' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
                     <div class="member-contact-info">
                         <div class="mem-name">
-                            <p>خانم سلمیانی</p>
-                            <h3>مدیر R&D</h3>
+                            <p>مریم بیگی</p>
+                            <h3>هم بنیانگذار</h3>
                         </div>
                         <div class="mem-social-links">
                                 <a href="#" title ="linkedin">
@@ -225,8 +186,8 @@
                     <img src="{% static 'img/mem-a3.png' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
                     <div class="member-contact-info">
                         <div class="mem-name">
-                            <p>خانم سلمیانی</p>
-                            <h3>مدیر R&D</h3>
+                            <p>زرگل احمدی</p>
+                            <h3>فروش سازمانی</h3>
                         </div>
                         <div class="mem-social-links">
                                 <a href="#" title ="linkedin">
@@ -253,8 +214,65 @@
                     <img src="{% static 'img/mem-a4.png' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
                     <div class="member-contact-info">
                         <div class="mem-name">
-                            <p>خانم سلمیانی</p>
-                            <h3>مدیر R&D</h3>
+                            <p>نیما نراقی</p>
+                            <h3>مدیر برنامه نویسی</h3>
+                        </div>
+                        <div class="mem-social-links">
+                                <a href="#" title ="linkedin">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="whatsapp">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#whatsapp"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="instagram">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#instagram"></use>
+                                    </svg>
+                                </a>
+                        </div>
+                    </div>
+                </article>
+                
+                
+                  <article class="team-members-item">
+                    <img src="{% static 'img/mem-a4.png' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
+                    <div class="member-contact-info">
+                        <div class="mem-name">
+                            <p>حمید رحیمی</p>
+                            <h3>برنامه نویس</h3>
+                        </div>
+                        <div class="mem-social-links">
+                                <a href="#" title ="linkedin">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="whatsapp">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#whatsapp"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="instagram">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#instagram"></use>
+                                    </svg>
+                                </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!--.team-members-item-->
+
+                <article class="team-members-item">
+                    <img src="{% static 'img/mem-a7.jpg' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
+                    <div class="member-contact-info">
+                        <div class="mem-name">
+                            <p>محمد شایگان</p>
+                            <h3>برنامه نویس</h3>
                         </div>
                         <div class="mem-social-links">
                                 <a href="#" title ="linkedin">
@@ -276,13 +294,98 @@
                     </div>
                 </article>
                 <!--.team-members-item-->
+                
+                  <article class="team-members-item">
+                    <img src="{% static 'img/mem-a8.jpg' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
+                    <div class="member-contact-info">
+                        <div class="mem-name">
+                            <p>جواد حسین زاده</p>
+                            <h3>برنامه نویس</h3>
+                        </div>
+                        <div class="mem-social-links">
+                                <a href="#" title ="linkedin">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="whatsapp">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#whatsapp"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="instagram">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#instagram"></use>
+                                    </svg>
+                                </a>
+                        </div>
+                    </div>
+                </article>
 
+
+
+                <article class="team-members-item">
+                    <img src="{% static 'img/mem-a5.png'%}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
+                    <div class="member-contact-info">
+                        <div class="mem-name">
+                            <p>سبحان مرادی</p>
+                            <h3>مدیر مالی</h3>
+                        </div>
+                        <div class="mem-social-links">
+                                <a href="#" title ="linkedin">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="whatsapp">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#whatsapp"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="instagram">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#instagram"></use>
+                                    </svg>
+                                </a>
+                        </div>
+                    </div>
+                </article>
+                
+                
+                <article class="team-members-item">
+                    <img src="{% static 'img/mem-a5.png'%}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
+                    <div class="member-contact-info">
+                        <div class="mem-name">
+                            <p>سهیلا احمدی</p>
+                            <h3>مدیر دیجیتال مارکتینگ</h3>
+                        </div>
+                        <div class="mem-social-links">
+                                <a href="#" title ="linkedin">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="whatsapp">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#whatsapp"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="instagram">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#instagram"></use>
+                                    </svg>
+                                </a>
+                        </div>
+                    </div>
+                </article>
+                
+                
                 <article class="team-members-item">
                     <img src="{% static 'img/mem-a5.png' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
                     <div class="member-contact-info">
                         <div class="mem-name">
-                            <p>خانم سلمیانی</p>
-                            <h3>مدیر R&D</h3>
+                            <p>مازیار روانبخش</p>
+                            <h3>مدیر زیرساخت</h3>
                         </div>
                         <div class="mem-social-links">
                                 <a href="#" title ="linkedin">
@@ -303,14 +406,98 @@
                         </div>
                     </div>
                 </article>
-                <!--.team-members-item-->
-
+                
+                
+                <article class="team-members-item">
+                    <img src="{% static 'img/mem-a5.png' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
+                    <div class="member-contact-info">
+                        <div class="mem-name">
+                            <p>سعید کامرانفر</p>
+                            <h3>مدیر امنیت</h3>
+                        </div>
+                        <div class="mem-social-links">
+                                <a href="#" title ="linkedin">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="whatsapp">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#whatsapp"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="instagram">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#instagram"></use>
+                                    </svg>
+                                </a>
+                        </div>
+                    </div>
+                </article>
+                
+                
+                <article class="team-members-item">
+                    <img src="{% static 'img/mem-a5.png' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
+                    <div class="member-contact-info">
+                        <div class="mem-name">
+                            <p>دکتر علی نیک سرشت</p>
+                            <h3>مشاوره دکترلینک</h3>
+                        </div>
+                        <div class="mem-social-links">
+                                <a href="#" title ="linkedin">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="whatsapp">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#whatsapp"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="instagram">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#instagram"></use>
+                                    </svg>
+                                </a>
+                        </div>
+                    </div>
+                </article>
+                
+                
+                <article class="team-members-item">
+                    <img src="{% static 'img/mem-a5.png' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
+                    <div class="member-contact-info">
+                        <div class="mem-name">
+                            <p>دکتر عنایت الله شهیدی</p>
+                            <h3>مشاور دکترلینک</h3>
+                        </div>
+                        <div class="mem-social-links">
+                                <a href="#" title ="linkedin">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="whatsapp">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#whatsapp"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="instagram">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#instagram"></use>
+                                    </svg>
+                                </a>
+                        </div>
+                    </div>
+                </article>
+                
+                
                 <article class="team-members-item">
                     <img src="{% static 'img/mem-a6.png' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
                     <div class="member-contact-info">
                         <div class="mem-name">
-                            <p>خانم سلمیانی</p>
-                            <h3>مدیر R&D</h3>
+                            <p>دکتر ذهره معینی</p>
+                            <h3>مشاور دکترلینک</h3>
                         </div>
                         <div class="mem-social-links">
                                 <a href="#" title ="linkedin">
@@ -331,17 +518,59 @@
                         </div>
                     </div>
                 </article>
+                
+                                <article class="team-members-item">
+                    <img src="{% static 'img/mem-a6.png' %}" class="team-member-avatar" alt="اعضای تیم دکتر لینک"/>
+                    <div class="member-contact-info">
+                        <div class="mem-name">
+                            <p>امیرعباس ذلفقاری</p>
+                            <h3>طراح</h3>
+                        </div>
+                        <div class="mem-social-links">
+                                <a href="#" title ="linkedin">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="whatsapp">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#whatsapp"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" title ="instagram">
+                                    <svg class="drlink-icon">
+                                        <use xlink:href="#instagram"></use>
+                                    </svg>
+                                </a>
+                        </div>
+                    </div>
+                </article>
+                
+                
                 <!--.team-members-item-->   
             </div>
             <!--.team-member-content-->
         </section>
-        <!--.team members-->
-
+                      
+                
+                
         <section class="team-history-diag">
             <h2  class="team-history-title aboutus-sec-title  custom-title" >داستان شکل گیری دکتر لینک</h2>
             
             <div class="timeline" style="direction: ltr;">
                 <span class="timeline-after"></span>
+            
+              <div class="timeline-container timeline-left">
+                  <span class="time-line-date">2010</span>
+                  <div class="content">
+                    <p>
+                                    اولین نسخه دکترلینک با ماکروسافت اکسس نوشته شد تا نوبت دهی بیمار را در مطب ها از کاعذ و خودکار بی نیاز کند
+
+                    </p>
+                  </div>
+                </div>
+
+            
                 <div class="timeline-container timeline-right">
                   <span class="time-line-date">2012</span>
                   <div class="content">
@@ -382,22 +611,50 @@
                     <span class="time-line-date">2017</span>  
                     <div class="content">    
                         <p>
-                            بازاریابی کلان؛ شروع ارسال تبلیغات به پزشکان کل کشور
+                            بازاریابی کلان؛ شروع ارسال تبلیغات به درمانگران کل کشور
                         </p>
                     </div>
                 </div>
 
                 <div class="timeline-container timeline-left">
-                    <span class="time-line-date">2017</span>  
+                    <span class="time-line-date">2018</span>  
                     <div class="content">    
                        <p>
                            آپدیت سیستم به نسخه 2.0.1
                        </p>
                        <p>
-                           شروع همکاری دکتر لینک به بانک پاسارگاد، اولین سیستم حرفه ای با تسویه آنی با پزشک پس از هر ویزیت ثبت شده توسط بیمار
+                           شروع همکاری دکتر لینک به بانک پاسارگاد، اولین سیستم حرفه ای با تسویه آنی با درمانگر پس از هر ویزیت ثبت شده توسط درمانجو
                        </p>
                     </div>
                 </div>
+                
+                     <div class="timeline-container timeline-right">
+                    <span class="time-line-date">2020</span>  
+                    <div class="content">    
+                       <p>
+                        توسعه زیرساخت ابری
+                       </p>
+                       <p>
+                       ما همیشه برای بهترین بودن تلاش کردیم در این سال کلیه ساختار دکترلینک را روی بستر های هوشمند ابری انتقال دادیم تا همیشه از منابع عالی برخوردار باشیم
+                       </p>
+                    </div>
+                </div>
+
+                
+                
+                <div class="timeline-container timeline-left">
+                    <span class="time-line-date">2022</span>  
+                    <div class="content">    
+                       <p>
+                                      توسعه زیرساخت نرم افزاری برای جذب درمانجوی جدید 
+                       </p>
+                       <p>
+                                   
+                       </p>
+                    </div>
+                </div>
+
+                
             </div>
             <!--.timeline-->
         </section>
@@ -405,86 +662,8 @@
     </main>
     <!--main-->
 
-  
-    <footer class="site-footer">
-        <div class="container  site-footer-content">
-            <a href="/" class="site-footer-logo">
-                <span class="logo-first-part">دکتر</span>
-                <span class="logo-last-part">لینک</span>
-            </a>
-            <div class="site-footer-contact-info">
-                <span class="footer-contact-phone col-xxl-3"><span>تلفن تماس: </span><span>۰۲۱۲۲۰۶۷۶۳۵</span> <span>تماس فوری: ۰۹۱۲۰۰۴۴۸۲۴</span></span>
-                                <span class="footer-contact-time"><span>ساعات پاسخگویی: </span><span>از <span class="time-contain">۸ صبح تا ۸ شب</span> و در روز های تعطیل با موبایل تماس بگیرید</span></span>
-            </div>
-            <div class="site-footer-detail">
-                <div class="site-footer-menu col-xxl-3">
-                    <!-- <h5 class="footer-det-title">دکتر لینک</h5> -->
-                    <nav>
-                        <ul>
-                            <li><a href="/">دکتر لینک</a></li>
-                            <li><a href="/about-us">درباره ما</a></li>
-                            <li><a href="/rules">قوانین و مقررات </a></li>
-                            <li><a href="/privacy">حریم خصوصی</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div  class="site-footer-text col-xxl-5">
-                    <h5 class="footer-det-title">دکتر لینک، مدیریت هوشمند کلینیک</h5>
-                    <p>سیستم جامع و یکپارچه مدیریت دکتر لینک، یک سیستم حرفه ای تشکیل شده از کانال های ارتباطی هوشمند و یکپارچه جهت مدیریت سریع و با کیفیت در راستای جذب و وفادار سازی درمانجو می باشد، این سیستم به مدیران ارشد کمک میکند تا در مسیر رشد بهترین تصمیمات مدیریتی را اتخاذ و با اطمینان خاطر برای آینده کلینیک خود برنامه ریزی کنند، دکتر لینک با افتخار از سال ۱۳۸۹ در این مسیر قدم نهاد.</p>
-                </div>
-                
-            </div>
-            <!--.site-footer-detail-->
-
-            <div class="footer-copyright">
-                <p>تمامی حقوق این سایت مربوط به <a href="/">دکتر لینک </a>می باشد.  </p>
-                <div class="social-media-links">
-                    <a href="https://www.linkedin.com/company/13298799" title ="linkedin" target="blank">
-                        <svg class="drlink-icon">
-                            <use xlink:href="#linkedin"></use>
-                        </svg>
-                    </a>
-                    <a href="https://wa.me/989392230048" title ="whatsapp" target="blank">
-                        <svg class="drlink-icon">
-                            <use xlink:href="#whatsapp"></use>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/dr.link.crm/" title ="instagram" target="blank">
-                        <svg class="drlink-icon">
-                            <use xlink:href="#instagram"></use>
-                        </svg>
-                    </a>
-                   
-                </div>
-            </div>
-            <!--.footer-copyright-->
-        </div>
-        <!--.site-footer-content-->
-    </footer>
-    <!--.site-footer-->
-    </div>
-    <!--site_wrap-->
-    <div id="mySidenav" class="sidenav">
-        <div>
-        <a href="#" class="closebtn res-menu-control"> <span>بستن</span><svg><use xlink:href="#close-circle"></use></svg></a>
-        <nav>
-            <ul class="top-menu-side">
-                <li><a href="/">صفحه اصلی</a></li>
-                <li><a href="/about-product">معرفی محصول</a></li>
-                <li><a href="/support">درخواست مشاوره رایگان</a></li>
-                <li><a href="/blog">بلاگ</a></li>
-                <li><a href="/about-us">درباره ما</a></li>
-                <li><a href="/contact-us">ارتباط با ما</a></li>
-            </ul>
-        </nav>   
-        </div>     
-    </div>  
-    <div class="product-purchase-link-container">
-        <div class="container"> 
-            <a href="/support" class=" product-purchase-link-fixed">مشاوره با ما</a>
-        </div>
-    </div>
+    {%  endblock %}
+    
     
 </body>
 </html>

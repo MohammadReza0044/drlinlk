@@ -13,7 +13,7 @@ def support_submit(request):
         form = supportForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, 'درخواست شما با موفقیت ثبت شد')
+            messages.add_message(request, messages.SUCCESS, 'کارشناسان ما در تاریخ و ساعت انتخاب شده ی شما، با شما تماس خواهند گرفت')
             data = form.cleaned_data
             url = "https://drlink.crm24.io/webservice.php"
 

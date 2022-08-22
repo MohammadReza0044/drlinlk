@@ -34,8 +34,7 @@
 	<!-- loading by form (if used AdminJalaliDateWidget) -->
 		{{ form.media }}
     
-    
-	
+
 </head>
 <body>
     <svg width="0" height="0" class="hidden">
@@ -138,9 +137,7 @@
                 <p>
                    برای درخواست مشاوره رایگان ابتدا فرم زیر را تکمیل نمایید
                 </p>
-                <p>
-                    کارشناسان ما در زمان انتخاب شده توسط شما،با شما تماس خواهند گرفت.
-                </p>
+                
             </div>
             <!--.support-desc-->
         {% if messages %}
@@ -167,15 +164,22 @@
                           تاریخ و ساعت خود را انتخاب کنید:
                     </label> {{form.support_date}} {{form.support_time}}
                     <br> <br> <br>
-                    <p>
-                        (کارشناسان ما در تاریخ و ساعت انتخاب شده ی شما، با شما تماس خواهند گرفت.)
-                    </p>
+                    
                 </div>
  
                 <div class="g-recaptcha" data-sitekey="6LcqFpEhAAAAADmC60MZBUMoancAsqJLcWGA3mKY"></div>
                 <br>
-                <input type="submit" value="ثبت">
+                <input type="submit" style="background:#002B6E; color:white; text-align:center; font-size:15px" value="ثبت">
             </form>
+            <script>
+                $("form").submit(function(event) {
+                   var recaptcha = $("#g-recaptcha-response").val();
+                   if (recaptcha === "") {
+                      event.preventDefault();
+                      alert("لطفا گزینه من روبات نیستم را چک کنید!");
+               }
+            });
+            </script>
    
     </main>
     <!--main-->
