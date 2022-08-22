@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{% static 'Css/styles.css' %}"/>
     <link rel="stylesheet" href="{% static 'Css/swiper-bundle.min.css' %}"/>
 
-    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>   
+    {% comment %} <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>    {% endcomment %}
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
@@ -162,7 +162,15 @@
                          تمرکز تیم ما بر روی اهداف مشتریان است. ما زمان زیادی صرف می‌کنیم تا کسب‌وکار شما را به طور کامل درک کنیم شما می‌توانید برای مشاوره در زمینه جذب بیمار و مدیریت کلینیک و مطب با ما تماس بگیرید.
                     </p>
                 </div>
-                <form id="contactus_form" method="POST" class="comment-form">
+                {% if messages %}
+            		{% for msg in messages %}
+            		<div class="alert alert-success" role="alert">
+                	<p> {{msg}}</p>
+          		</div>
+            		{% endfor %}
+        	{% endif %}
+            <br> <br>
+                <form id="contactus_form" method="POST">
                     {% csrf_token %}
                     <div >
                         <div class="form-group name-group">
@@ -182,6 +190,15 @@
                     <input type="submit"  value="ارسال"/>
 
                 </form>
+                <script>
+                    $("form").submit(function(event) {
+                       var recaptcha = $("#g-recaptcha-response").val();
+                       if (recaptcha === "") {
+                          event.preventDefault();
+                          alert("لطفا گزینه من روبات نیستم را چک کنید!");
+                   }
+                });
+                        </script>
                 <!--#contactus_form-->
 
                 <div class="address-part row">

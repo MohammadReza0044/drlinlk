@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 import requests
 import json
+from django.contrib import messages
 
 from .models import contact_us
 from.forms import contactUs_form
@@ -11,6 +13,7 @@ def contactUs_submit(request):
         form = contactUs_form(request.POST)
         if form.is_valid():
            form.save() 
+           messages.add_message(request, messages.SUCCESS, 'پیغام شما با موفقیت ثبت شد')
            data = form.cleaned_data
            url = "https://drlink.crm24.io/webservice.php"
 

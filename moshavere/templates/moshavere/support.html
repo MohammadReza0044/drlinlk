@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
     
 
-    {% comment %} <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script> {% endcomment %}
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script> 
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
@@ -141,13 +141,13 @@
                 </p>
             </div>
             <!--.support-desc-->
-            {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <li styles="color: blue" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
-                {% endfor %}
-            </ul>
-            {% endif %}
+        {% if messages %}
+            {% for msg in messages %}
+            <div class="alert alert-success" role="alert">
+                <p> {{msg}}</p>
+            </div>
+            {% endfor %}
+        {% endif %}
             <br> <br>
             <form id="customer_support_form" method="post">
                 {% csrf_token %}

@@ -13,7 +13,7 @@ def support_submit(request):
         form = supportForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'با موفقیت ثبت شد')
+            messages.add_message(request, messages.SUCCESS, 'درخواست شما با موفقیت ثبت شد')
             data = form.cleaned_data
             url = "https://drlink.crm24.io/webservice.php"
 
@@ -43,7 +43,7 @@ def support_submit(request):
             response = requests.request("POST", url, headers=headers, data=payload, files=files)
            
          
-            return HttpResponseRedirect('')
+            return HttpResponseRedirect('/support')
     else:
         form = supportForm()
     

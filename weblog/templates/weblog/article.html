@@ -167,6 +167,15 @@
                 </svg>
             </button>
         </form>
+        
+        {% if messages %}
+            		{% for msg in messages %}
+            		<div class="alert alert-success" role="alert">
+                	<p> {{msg}}</p>
+           		    </div>
+            		{% endfor %}
+           	    {% endif %}
+            	<br> <br>
         <div class="row">
             <main class="col-md-8  col-xs-12 post-content">
                 <h2 class="page-title-h custom-title">{{ post.post_title_fa}}</h2>
@@ -237,6 +246,14 @@
                     </div>
                 </div>
                 <!--.article-controls-->
+                {% if messages %}
+            		{% for msg in messages %}
+            		<div class="alert alert-success" role="alert">
+                	<p> {{msg}}</p>
+           		    </div>
+            		{% endfor %}
+           	    {% endif %}
+            	<br> <br>
 
                 <h4 class="article-send-comm-title">دیدگاه شما:</h4>
                 <form id="article_send_comment" method="POST" class="comment-form">

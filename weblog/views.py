@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator
 from django.views import View
 from datetime import datetime , timedelta
+from django.contrib import messages
 
 
 
@@ -45,6 +46,7 @@ def post_detail(request,post_name):
             comment_content = form.cleaned_data ['comment_content'] 
             form.save(commit=False)
             new_comment = post_Comments.objects.create(post=posts , author=author, author_email=author_email, comment_content=comment_content)
+            messages.add_message(request, messages.SUCCESS, 'دیدگاه شما با موفقیت ثبت شد')
     comment = post_Comments.objects.filter (post=posts, status='approved')
     return render(request, 'weblog/article.html', {'posts': posts, 'comment': comment, 'dt':dt, 'mt':mt, 'relative_posts':relative_posts,'most_visit_obj':most_visit_obj})
         

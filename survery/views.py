@@ -19,7 +19,7 @@ def survery_submit(request):
        new_survery = survey(full_name=name, age=age, clinic_name=clinic, education=education, specialty=specialty )
        new_survery.save()
          
-   return render (request,'survery\survery.html', {})
+   return render (request,'survery\survery.html')
 
 
 
