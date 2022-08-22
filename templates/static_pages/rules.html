@@ -1,4 +1,6 @@
+{% extends 'base.html' %}
 {% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html class="no-js" dir="rtl" lang="fa-IR">
 <head>
@@ -9,7 +11,7 @@
     <meta name="subject" content=""/>
     <meta name="language" content="" />
     <meta http-equiv="Cache-Control" content="no-cache" />
-    
+  
     <title>DRlink</title>
 
     <link rel="stylesheet" href="{% static 'Css/bootstrap.min.css' %}" />
@@ -17,7 +19,7 @@
     <link rel="stylesheet" href="{% static 'Css/swiper-bundle.min.css' %}" />
     
 
-    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script> 
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
@@ -76,8 +78,8 @@
         </symbol>
         <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 148" id="tick-circle"><path d="M74.0007 135.667C107.917 135.667 135.667 107.917 135.667 74.0002C135.667 40.0835 107.917 12.3335 74.0007 12.3335C40.084 12.3335 12.334 40.0835 12.334 74.0002C12.334 107.917 40.084 135.667 74.0007 135.667Z" stroke="#34C226" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M47.791 74L65.2427 91.4517L100.208 56.5483" stroke="#34C226" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
         <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="close-circle">
-            <path d="M5 19L19 5"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M19 19L5 5"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M5 19L19 5"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M19 19L5 5"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
         </symbol>
         <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="search-icon">
             <path d="M8.74935 15.8332C12.6614 15.8332 15.8327 12.6619 15.8327 8.74984C15.8327 4.83782 12.6614 1.6665 8.74935 1.6665C4.83733 1.6665 1.66602 4.83782 1.66602 8.74984C1.66602 12.6619 4.83733 15.8332 8.74935 15.8332Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -111,239 +113,55 @@
         </symbol>
       </svg>
     <div class="site-wrap" id="site_wrap">
-        <header>
-            <div class="site-header ">
-                <div class="container">
-                    <h1 class="site-logo">
-                        <a href="/">
-                            <span class="logo-first-part">دکتر</span>
-                            <span class="logo-last-part">لینک</span>
-                        </a>
-                    </h1>
-                    <nav>
-                        <ul class="top-menu">
-                            <li><a href="/">صفحه اصلی</a></li>
-                            <li><a href="/about-product">معرفی محصول</a></li>
-                            <li><a href="/support">درخواست مشاوره رایگان</a></li>
-                            <li><a href="/blog">بلاگ</a></li>
-                            <li><a href="/about-us">درباره ما</a></li>
-                            <li><a href="/contact-us">ارتباط با ما</a></li>
-                        </ul>
-                    </nav>
-                    <a href="/support" class="product-purchase-link" >مشاوره با ما</a>
-                </div>
-            </div>
-            <!--.site-header-->
-    
-            <div class="mobile-header">
-                <div class="container ">
-                    <h1 class="mobile-header-logo">
-                        <a href="/">
-                            <span class="logo-first-part">دکتر</span>
-                            <span class="logo-last-part">لینک</span>
-                        </a>
-                    </h1>
-                    <span  class="menu-icon-res res-menu-control">
-                        <svg><use xlink:href="#menu"></use></svg>
-                    </span>    
-                </div>
-            </div>
-            <!-- .mobile-header -->
-        </header>
+        <my-header></my-header>
         <!--header-->
+
     <main>
-        <div class="container about-product-page-content">
-            <div class="ap-title page-title">
-                <h2 class="custom-title">درباره محصول دکتر لینک</h2>
-                <p>سیستم مدیریت هوشمند مراکز روانشناسی</p>
-            </div>
-            <!--.ap-title-->
-            <div  class="ap-desc">
-                <p>
-دکتر لینک یک محصول کاملا مدیریتی در راستای جذب و وفادار سازی درمانجو به ۶ نقشه مهم اعم از مدیرکل کلینیک، مدیر داخلی، حسابدار، پذیرش، درمانگر و درمانجو سرویس حرفه ای ارائه می دهد. هرکدام دارای نقش های منحصر به فرد خود که قابلیت شخصی سازی دارند می باشند. 
-                </p>
-            </div>
-            <!--.ap-desc-->
-            <section class="product-panels">
-                <h2 class="custom-title">پنل های محصول دکتر لینک</h2>
-                <div class="p-panel-item">
-                    <div class="p-panel-title">
-                        <h2>ویژگی های پنل مدیریت</h2>
-                        <svg class="drlink-icon">
-                            <use xlink:href="#arrow-left"></use>
-                        </svg>
-                    </div>
-                    <!--.p-panel-title-->
-                    <div class="p-panel-content">
-                       <p>
-این پنل به طور کلی دارای دسترسی کامل از محصول دکترلینک می باشد که مقدمات اصلی کلینیک را که شامل تعریف مدیران پایین تر می باشد و همچنین می توانند درصد های سهام را برای سهام دار تعریف کنند. در این پنل مدیرکل گزارش کاملی از عملکرد کلینیک به همراه گزارشات دقیق مالی مشاهده می کند. 
-                       </p>
-         <!--              <img  class="full-w-img" src="assets/images/panel1.png" alt="panel item image"> -->
-                       <h3>مدیر کل </h3>
-                           <p>مدیر کل سیستم دسترسی کامل به همه ساختار های اصلی سیستم را دارد و امکان این را دارد تا نقش ها و کاربران اصلی سیستم را درست کند. </p>
-                                                         
-                                   
-                                   <h3>مدیر داخلی</h3>
-                       <p>در مراکز روانشناسی بیشترین استرس را مدیر داخلی دارد زیرا همه هماهنگی های بین درمانگر و پذیرش و حتی هماهنگی های درمانجو ها را هم بر عهده دارد. این شخص مهم ترین کار را در مجموعه انجام میدهد به گونه ای که کوچک ترین اشتباه این شخص می تواند تبعات زیادی به همراه داشته باشد به همین دلیل سیستم دکترلینک با تمرکز بر روی دقت عمل توانسته است که همه فرایند های کاری را به درستی و با حساسیت زیاد مدیریت کند.</p>
- 
-                       <h3>مدیر مالی</h3>
-                       <p>طبق تجربه مدیر حسابداری یا حسابدار همیشه با نگرانی های زیادی و فشار های زیادی از سمت درمانگران و مدیرکل هستند که معمولا با کلی تنش و نگرانی حساب و کتاب های کلینیک را به صورت ماهانه انجام میدهند و وقتی به ایرادی می رسند ناراحتی زیادی برایشان ایجاد می شود. دکترلینک با طراحی کامل ساختار های مالی دقیق و حرفه ای به طور کلی و کامل همه نگرانی ها و اشتباهات و خطاهای محاسباتی را به صفر رسانده است. و این اطمینان را به مدیران می دهد که هیچ نگرانی از بابت محاسبات مالی آخر ماه نداشته باشند.</p>
-                            </div>
-                    <!--.p-panel-content-->
+        <div class="container " >
+            <div class="page-content">
+                <h2 class=" page-title custom-title">قوانین و مقررات</h2>
+                <!--.page-title-->
+                <div class="page-text-content">
+                    <strong>
+                       شما باید از کلیه خط مشی‌هایی که به واسطه سرویس‌ها در اختیار شما قرار گرفته است، پیروی کنید. استفاده از خدمات ما، به این معنی است که با این شرایط موافقت کرده‌اید. لطفاً برای آشنایی با شرایط استفاده از دکتر لینک این سند را مطالعه کنید. 
+
+                    </strong>
+                    <h2>از سرویس‌های ما سوء استفاده نکنید.</h2>
+                    <p>
+                        به عنوان مثال از تداخل در سرویس‌های ما یا تلاش برای دسترسی به آنها با استفاده از روشی بجز رابط کاربری و دستورالعمل‌های ارائه شده توسط ما، خودداری کنید. 
+                    </p>
+                    <h2>
+                        شما می‌توانید از سرویس‌های ما فقط به گونه‌ مجاز شناخته شده توسط قانون، از جمله قوانین و مقررات وضع شده از سوی وزارت فناوری ارتباطات و اطلاعات قابل اجرا برای کنترل ورودی و خروجی، استفاده کنید. 
+                    </h2>
+                    <p>
+                        در صورت عدم تبعیت شما از شرایط یا خط مشی‌های ما و یا در صورت مشکوک شدن به هرگونه سوء عملکرد، ممکن است ارائه سرویس‌ها به شما متوقف گردیده یا به حالت تعلیق درآید.
+                    </p>
+                    <h2>
+                       استفاده از سرویس‌های ما سبب نمی‌شود که مالکیت هرکدام از دارایی ها و حقوق معنوی موجود در سرویس‌های ما یا محتواهایی که به آنها دسترسی دارید، به شما تعلق بگیرد. 
+                    </h2>
+                    <p>
+                         شما امکان استفاده از محتوای سرویس‌های ما را ندارید، مگر اینکه دارنده آن سرویس‌ها به شما اجازه دهد یا بگونه‌ای دیگر به واسطه قانون مجاز به انجام این کار باشید. این شرایط به شما این حق را نمی‌دهند، از مارک یا لوگوهای استفاده شده در این سرویس‌ها استفاده کنید. اعلامیه‌های حقوقی نمایش داده شده در سرویس‌های ما را حذف یا نامفهوم نکرده یا آنها را تغییر ندهید. 
+                    </p>
+                    <h2>
+                         سرویس‌های ما محتواهایی را به نمایش می‌گذارند که متعلق به تکنولوژی دکتر لینک نیست. 
+                    </h2>
+                    <p>
+                         مسئولیت این محتواها تنها بر عهده شخص و سازمانی است که آن را در اختیار دارد. در صورت دریافت گزارش مبنی بر محتوای نامناسب، جهت بررسی قانونی بودن و رعایت خط مشی ها، محتوا مورد بازبینی قرار می گیرد. همچنین در صورتی که محتوا بصورت منطقی، خط مشی‌ها یا قوانین را نقض کند، آن را حذف کرده یا از نمایش آن جلوگیری می شود. 
+                    </p>
+                    <h2>
+                         اعلامیه‌ها، پیام های اجرایی از طریق مسیر “سرویس‌ها” در برنامه برای شما ارسال می شود.
+                    </h2>
+                    <p>
+                        امکان لغو پیام ها برای شما امکام پذیر است. 
+                    </p>
                 </div>
-                <!--.p-panel-item-->
-
-                <div class="p-panel-item">
-                    <div class="p-panel-title">
-                        <h2>پنل پذیرش</h2>
-                        <svg class="drlink-icon">
-                            <use xlink:href="#arrow-left"></use>
-                        </svg>
-                    </div>
-                    <!--.p-panel-title-->
-                    <div class="p-panel-content">
-                       <p>
-ویترین هر کلینیکی بخش پذیرش آن است وقتی تیم پذیرش عملکرد مناسبی نداشته باشد می تواند خاطر ناخوشی در ذهن درمانگر ایجاد کند، ما در دکترلینک توانسته ایم تا در کمترین زمان به بخش پذیرش این سرویس را ارائه دهیم تا در پاسخگوی به درمانجو سریع ترین زمان را داشته باشد و همه نیاز های ایشان را در دسترس داشته باشد.                       </p>
-                       <h3>
-ثبت درمانجر                       </h3>
-                       <p>ثبت درمانجو به ۲ صورت کامل و سریع انجام می پذیرد، در حالت کامل پرونده درمانجو هم توسط پذیرش انجام می شود ولی در حالت دوم ورودی اطلاعات درمانجو تنها اسم فامیل و موبایل ایشان می باشد. </p>
-                                  <h3>ثبت نوبت</h3>
-                       <p>ما همراره تلاش می کردیم ثبت نوبت در سریع ترین زمان ممکن انجام شود. طبق آخرین آمار سیستمی کمترین زمانی که یک نوبت ثبت شده است در سیستم دکترلینک ۴ ثانیه بوده است.</p>
-                                       <h3>وارد کردن مالی</h3>
-                       <p>در مراکز روانشناسی یک دغدغه اساسی وجود دارد و آن حساب و کتاب آخر ماه می باشد وقتی یک منشی اطلاعات مالی را وارد میکند و آن نوبت دارای چندین بخش مالی می باشد حساب کتاب آن دارای چالش می شود اما وقتی آن ویزیت دارای تخفیف یا تست باشد یا اینکه مراجعین اعلام کنند ما به طور مثال ۱۰ دقیقه زودتر از اتاق درمان خارج شدیم پس باید پول کمتری بدهیم حساب کتاب بیشتر چالش بر انگیز می شود که این چالش حساس هم توسط دکترلینک حل شده است و منشی با خیال راحت همه موارد را می تواند مدیریت کند بدون اشتباه محاسباتی یا خطا های مالی.</p>
-                       <h3>پیگیری نوبت ها</h3>
-                       <p>پیگیری نوبت ها یکی از مهم ترین و اصلی ترین ارکان مدیریتی در مراکز روانشناسی می باشد که در سیستم دکترلینک این رکن هم به صورت خودکار انجام می شود و هم به صورت دستی توسط بخش پذیرش.</p>
-
-                    </div>
-                    <!--.p-panel-content-->
-                </div>
-                <!--.p-panel-item-->
-
-                <div class="p-panel-item">
-                    <div class="p-panel-title">
-                        <h2>پنل درمانگر</h2>
-                        <svg class="drlink-icon">
-                            <use xlink:href="#arrow-left"></use>
-                        </svg>
-                    </div>
-                    <!--.p-panel-title-->
-                    <div class="p-panel-content">
-                       <p>پنل درمانگر دارای حساسیت خاصی هست، به این گونه که درمانگران محترم نیاز دارند به طور دقیق نوبت های خود را مشاهده کنند و همچنین یادآوری نوبت هارا از شب قبل داشته باشند</p>
-                           <h3>مشاهده نوبت های آینده</h3>
-                       <p>ما سعی کردیم برای درمانگران موقعیتی ایجاد کنیم که با اطمینان خاطر از وضعیت نوبت های خود آگاه باشند </p>
-                       <h3>مشاهده پرونده درمانجو</h3>
-                       <p>ما در سیستم دکترلینک با ساختار پیچیده امنیتی سعی داریم تا همیشه درمانگران از امنیت پرنده های خود اطمینان پیدا کنند، لذا این سیستم به گونه ای طراحی شده است که هیچ درمانگری امکان مشاهده پرونده درمانجویان دیگری را ندارد، ما این قابلیت را حتی در فایل های آپلودی هم اعمال کردیم که تنها درمانگر مورد نظر امکان مشاهده پرونده های آپلود شده را دارند. </p>
-                       <h3>داشبود مالی و عملکردی من</h3>
-                       <p>ما در دکترلینک سعی در شفاف سازی کامل همه فرایند ها برای درمانگران داریم به همین منظور دو پنل کاملا اختصاصی و کامل را در سیستم طراحی کردیم که درمانگر اطلاعات دقیقی از عملکرد کاری خود و مالی ویزیت ها داشته باشد. </p>
-
-                    </div>
-                    <!--.p-panel-content-->
-                </div>
-                <!--.p-panel-item-->
-
-                <div class="p-panel-item">
-                    <div class="p-panel-title">
-                        <h2>پنل درمانجو</h2>
-                        <svg class="drlink-icon">
-                            <use xlink:href="#arrow-left"></use>
-                        </svg>
-                    </div>
-                    <!--.p-panel-title-->
-                    <div class="p-panel-content">
-                       <p>پنل درمانجو ها یکی از پنل هایی است که باید همه نیاز های کاری را با کلینیک بتواند انجام دهد ما در دکترلینک سعی کردیم که همه فرایند های مدیریتی اعم از دریافت نوبت ثبت نام کارگاه و خرید از کلینیک را در پنل درمانجو محیا کنیم. درمانجو ها می توانند توسط پنل ثبت نام اختصاصی کنند و همچنین در مواقعی امکان را داند تا پیام اضطراری به درمانگر خود ارسال کنند.</p>
-                       <h3>مشاده نوبت های خالی و دریافت نوبت</h3>
-                       <p>این بخش به گونه ای طراحی شده است که هر درمانجو می تواند درمانگر مورد نظر خود را به صورت جداگانه مشاهده کنید و حتی در پروفایل درمانجو جهت مشاهده اطلاعات تکمیلی وارد شود. و نوبت خالی مورد نظر را بگیرد و به صورت آنلاین پرداخت کند. </p>
-                                             <h3>ثبت نام کارگاه و خرید فیلم</h3>
-                       <p>هر درمانجویی می تواند کارگاه مورد نظر خود را انتخاب کند و با پرداخت آنلاین در کارگاه مورد نظر در تاریخ مشخص شده شرکت کند.</p>
-                                      </div>
-                    <!--.p-panel-content-->
-                </div>
-                <!--.p-panel-item-->
-            </section>
+                <!--.page-text-content-->
+            </div>  
         </div>
     </main>
     <!--main-->
 
-  
-    <footer class="site-footer">
-        <div class="container  site-footer-content">
-            <a href="/" class="site-footer-logo">
-                <span class="logo-first-part">دکتر</span>
-                <span class="logo-last-part">لینک</span>
-            </a>
-            <div class="site-footer-contact-info">
-                <span class="footer-contact-phone col-xxl-3"><span>تلفن تماس: </span><span>۰۲۱۲۲۰۶۷۶۳۵</span> <span>تماس فوری: ۰۹۱۲۰۰۴۴۸۲۴</span></span>
-                                <span class="footer-contact-time"><span>ساعات پاسخگویی: </span><span>از <span class="time-contain">۸ صبح تا ۸ شب</span> و در روز های تعطیل با موبایل تماس بگیرید</span></span>
-            </div>
-            <div class="site-footer-detail">
-                <div class="site-footer-menu col-xxl-3">
-                    <!-- <h5 class="footer-det-title">دکتر لینک</h5> -->
-                    <nav>
-                        <ul>
-                            <li><a href="/">دکتر لینک</a></li>
-                            <li><a href="/about-us">درباره ما</a></li>
-                            <li><a href="/rules">قوانین و مقررات </a></li>
-                            <li><a href="/privacy">حریم خصوصی</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div  class="site-footer-text col-xxl-5">
-                    <h5 class="footer-det-title">دکتر لینک، مدیریت هوشمند کلینیک</h5>
-                    <p>سیستم جامع و یکپارچه مدیریت دکتر لینک، یک سیستم حرفه ای تشکیل شده از کانال های ارتباطی هوشمند و یکپارچه جهت مدیریت سریع و با کیفیت در راستای جذب و وفادار سازی درمانجو می باشد، این سیستم به مدیران ارشد کمک میکند تا در مسیر رشد بهترین تصمیمات مدیریتی را اتخاذ و با اطمینان خاطر برای آینده کلینیک خود برنامه ریزی کنند، دکتر لینک با افتخار از سال ۱۳۸۹ در این مسیر قدم نهاد.</p>
-                </div>
-                
-            </div>
-            <!--.site-footer-detail-->
-
-            <div class="footer-copyright">
-                <p>تمامی حقوق این سایت مربوط به <a href="/">دکتر لینک </a>می باشد.  </p>
-                <div class="social-media-links">
-                    <a href="https://www.linkedin.com/company/13298799" title ="linkedin" target="blank">
-                        <svg class="drlink-icon">
-                            <use xlink:href="#linkedin"></use>
-                        </svg>
-                    </a>
-                    <a href="https://wa.me/989392230048" title ="whatsapp" target="blank">
-                        <svg class="drlink-icon">
-                            <use xlink:href="#whatsapp"></use>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/dr.link.crm/" title ="instagram" target="blank">
-                        <svg class="drlink-icon">
-                            <use xlink:href="#instagram"></use>
-                        </svg>
-                    </a>
-                   
-                </div>
-            </div>
-            <!--.footer-copyright-->
-        </div>
-        <!--.site-footer-content-->
-    </footer>
-    <!--.site-footer-->
-    </div>
-    <!--site_wrap-->
-    <div id="mySidenav" class="sidenav">
-        <div>
-        <a href="#" class="closebtn res-menu-control"> <span>بستن</span><svg><use xlink:href="#close-circle"></use></svg></a>
-        <nav>
-            <ul class="top-menu-side">
-                <li><a href="/">صفحه اصلی</a></li>
-                <li><a href="/about-product">معرفی محصول</a></li>
-                <li><a href="/support">درخواست مشاوره رایگان</a></li>
-                <li><a href="/blog">بلاگ</a></li>
-                <li><a href="/about-us">درباره ما</a></li>
-                <li><a href="/contact-us">ارتباط با ما</a></li>
-            </ul>
-        </nav>   
-        </div>     
-    </div>  
-    <div class="product-purchase-link-container">
-        <div class="container"> 
-            <a href="/support" class=" product-purchase-link-fixed">مشاوره با ما</a>
-        </div>
-    </div>
-    
+{% endblock %}
 </body>
 </html>
+

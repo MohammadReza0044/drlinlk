@@ -124,93 +124,13 @@ jQuery(document).ready(function($) {
      });
 
 
-    /*
-    * support form (support page)
-    */ 
-    num_options = $('#req_date option');
-    if(num_options.length > 0) {
-        $('#req_date').attr ('size' , num_options.length)
-    }
-    $(document).on('submit','form#customer_support_form',function(e){
-        e.preventDefault();
-        //ajax code
-        $('#support_form_modal').modal('show');
-        $('.site-header').css('display', 'none');
-        $('.modal').addClass('modal-centerd');
-    }) ;  
+   
 
-    /**
-     * survay form
-     */
-    $(document).on('change click','form#survey_form input',function(){
-        if($(this).hasClass('invalid-input')  ){
-            $(this).next().fadeOut();
-            $(this).next().remove();
-            $(this).removeClass('invalid-input');
-        }
-        else if ($(this).hasClass('invalid-radio-input')) {
-            $('.range-age-content').next().fadeOut();
-            $('.range-age-content').next().remove();
-            $('.range-age-content input').removeClass('invalid-radio-input');
-        }
-    });
+   
 
 
-    $(document).on('submit','form#survey_form',function(e){
-        e.preventDefault();
-        error = false;
-        $('.input-validation-message').remove();
-        form_values = $(this).find('input[type=text]');
-        form_values.removeClass('invalid-input');
-        form_values.each(function() {
-            if($(this).hasClass('required-field') && $(this).val() == '' ) {
-                error = true;
-                $(this).addClass('invalid-input');
-                message = '<p class="input-validation-message">لطفا این فیلد  را تکمیل کنید</p>';
-                $('<p class="input-validation-message">لطفا این فیلد را تکمیل کنید.</p>').insertAfter($(this));
-            }  
-        });
-        var radioValue = $("input[name='req_range_age']:checked").val();
-        if(!radioValue && $("input[name='req_range_age']").hasClass('required-field')){
-            error = true;
-            $("input[name='req_range_age']").addClass('invalid-radio-input');
-            $('<p class="input-validation-message">یکی از گزینه ها را انتخاب کنید.</p>').insertAfter($('.range-age-content'));
-        }
-        if(error){
-            $('.input-validation-message').fadeIn();
-        }
-        else {
-            //ajax code
-            $('#survey_form_modal').modal('show');
-            $('.modal').addClass ('modal-centerd');
-            $('.site-header').css('display' , 'none');
-        }
-    });
-    $(document).on('click',' .modal-close',function(e){
-        e.preventDefault();
-        $('.modal').removeClass ('modal-centerd');
-        $($(this).attr('data-mid')).modal('hide');
-        $('.site-header').removeAttr('style');
-    });
-
-    /*
-    * support option-time & time 
-    */
-    $(document).on('click','.option-box',function(e){
-        e.preventDefault();
-        target_input = ($(this).hasClass('time-option')) ? $('input[name=req_time]'):$('input[name=req_date]');
-        custom_class =  ($(this).hasClass('time-option')) ? '.time-option' : '.date-option';
-        selected = $(this).hasClass('option-selected') ? false :true;
-        $(custom_class).removeClass('option-selected' ,{duration:1000});
-        if(selected) {
-            $(this).addClass('option-selected' , {duration:1000});
-            change_value_onclick ($(this) ,  target_input);
-        }
-        else {
-            target_input.val('');
-        }
-    });
-
+    
+    
     /**
      * Mobile menu
     */
@@ -225,92 +145,13 @@ jQuery(document).ready(function($) {
     });  
 
 
-    /**
-     * multi-step survey form
-     */
-    var currentTab = 0; 
-    var def_prev_val = -1 ;
-    var def_next_val = 1;
-    showTab(currentTab); 
-    $(document).on('click','#msurvey_nextBtn , #msurvey_prevBtn , #submit_step_form',function(e){
-        e.preventDefault();
-        n = (($(this).attr('id')== 'msurvey_nextBtn') || ($(this).attr('id')== 'submit_step_form') ) ?  def_next_val :  def_prev_val ;
-        // if (n == 1) return false;
-        $(".ms-tab").eq(currentTab).css('display' , 'none');;
-        currentTab = currentTab + n;
-        showTab(currentTab);   
-    });
-    $(document).on('click','.start-survey',function(e){
-        e.preventDefault();
-        $(this).parent().parent().fadeOut();
-        $('#survey_form_multistep').fadeIn();
-    });
+    
 
     
-    /*end:multi-step survey form */
-
-     /**
-     * article_send_comment form
-     */
-    $('.palceholder').click(function() {
-        $(this).siblings('input').focus();
-      });
-      $('.form-control').focus(function() {
-        $(this).siblings('.palceholder').hide();
-      });
-      $('.form-control').blur(function() {
-        var $this = $(this);
-        if ($this.val().length == 0)
-          $(this).siblings('.palceholder').show();
-    });
-    $('.form-control').blur();
-
-    $(document).on('submit','form.comment-form',function(e){
-        e.preventDefault();
-        error = false;
-        var required_fields = [];
-        $("form.comment-form input , form.comment-form textarea").each(function() {
-            if($(this).hasClass('required-field')) {
-                required_fields.push($(this).attr('name'));
-            }
-        });
-        var values = $(this).serializeArray();
-        $.each(values, function(index, value){  
-            if(value['value'] =='' && $.inArray( value['name'], required_fields) !== -1 ){
-                error = true;
-                // return false; 
-            }
-        });
-        if(error){
-            $('#fail_comm_form_modal').modal('show');
-            $('.site-header').css('display', 'none');
-            $('#fail_comm_form_modal').css('z-index', '2000');
-            $('#success_comm_form_modal').css('z-index', '1000');
- 
-        }
-        else {
-            //ajax code
-            $('#success_comm_form_modal').modal('show');
-            $('#fail_comm_form_modal').css('z-index', '1000');
-            $('#success_comm_form_modal').css('z-index', '2000');
-            $('.site-header').css('display', 'none');
-        }
-        $('.modal').addClass ('modal-centerd');
-    });
-    /*end:article_send_comment form */
+    
 
 
-    /**
-     * like article 
-    */
-    $(document).on('click','.like-num',function(e){
-        e.preventDefault();
-        var cur_value = parseInt($(this).find('span').text());
-        var new_value = ($(this).hasClass('add-like')) ? cur_value-1 : cur_value+1 ;
-        $(this).toggleClass('add-like');
-        $(this).find('span').text(new_value);
-    });
-    /*end:like article */
+   
 
     /**
      * show/hide header
