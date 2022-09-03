@@ -65,3 +65,23 @@ class Visitors(models.Model):
     class Meta:
         app_label = 'weblog'
         db_table = 'visitors'
+
+
+class PostTags(models.Model):
+    post_id = models.IntegerField()
+    tag_id = models.IntegerField()
+
+    class Meta:
+        app_label = 'weblog'
+        db_table = 'post_tags'
+
+
+
+class Tags(models.Model):
+    created_at = models.BigIntegerField()
+    name = models.CharField(max_length=255)
+    name_clean = models.CharField(unique=True, max_length=255)
+
+    class Meta:
+        app_label = 'weblog'
+        db_table = 'tags'

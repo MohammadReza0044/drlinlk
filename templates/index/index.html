@@ -174,7 +174,7 @@
                         </p>
                         <div class="consult-controls">
                             <a href="http://source.drlink.ir" class="purchase-link" target="blank">مشاهده دمو</a>
-                            <a href="/support" class="consult-link">مشاوره با ما</a>
+                            <a href="/support" class="consult-link">مشاوره و خرید</a>
                         </div>
                         <!--.consult-controls-->
                     </div>
@@ -384,6 +384,7 @@
                             <p class="slide-customer-name">مرکز روانشناسی دکتر زهره معینی</p>
                         </div>
                     </div>
+                 
                     <div class="swiper-slide">
                         <div class="slide-content">
                             <div class="slide-customer-logo">
@@ -392,12 +393,31 @@
                             <p class="slide-customer-name">مرکز روانشناسی کوشا</p>
                         </div>
                     </div>
+
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <div class="slide-customer-logo">
+                                <img src="{% static 'img/customer4.png' %}" alt="customer logo" />
+                            </div>
+                            <p class="slide-customer-name">مرکز روانشناسی دریا</p>
+                        </div>
+                    </div>
+                    
                     <div class="swiper-slide">
                         <div class="slide-content">
                             <div class="slide-customer-logo">
                                 <img src="{% static 'img/customer1.png' %}" alt="customer logo" />
                             </div>
                             <p class="slide-customer-name">مرکز روانشناسی دکتر سهیل شمس</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <div class="slide-customer-logo">
+                                <img src="{% static 'img/customer1.png' %}" alt="customer logo" />
+                            </div>
+                            <p class="slide-customer-name">کلینیک روانشناسی تهران دانا</p>
                         </div>
                     </div>
 
@@ -527,7 +547,7 @@
                     <a href="blog/{{p.post_name}}/"  ><img src="https://www.drlink.ir/uploads/{{p.media_name}}" class="card-img-top" alt="..."> </a>
                     <span>نویسنده:</span><span>{{p.user_id}} </span>
                     <p class="card-title mb-3 "> {{p.post_title_fa|truncatewords:7}}</p>
-                    <span>{{p.post_date }}</span>
+                    
                     <div>
                         <a class="article-item-permalink" href="blog/{{p.post_name}}/">
                             <span>بیشتر بخوانید</span>

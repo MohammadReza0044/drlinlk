@@ -24,7 +24,7 @@ class header extends HTMLElement{
                       <li><a href="/contact-us">ارتباط با ما</a></li>
                   </ul>
               </nav>
-              <a href="/support" class="product-purchase-link" >مشاوره با ما</a>
+              <a href="/support" class="product-purchase-link" >مشاوره و خرید </a>
           </div>
       </div>
       <!--.site-header-->

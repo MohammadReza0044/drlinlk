@@ -1,7 +1,7 @@
 from django.db.models import Count
 import math
 from django.shortcuts import render 
-from django.shortcuts import get_object_or_404 
+from django.shortcuts import get_object_or_404 , get_list_or_404
 from django.core.paginator import Paginator
 from django.views import View
 from datetime import datetime , timedelta
@@ -12,7 +12,7 @@ from django.contrib import messages
 from jalali_date import datetime2jalali, date2jalali
 
 
-from .models import Posts , post_Comments , Visitors
+from .models import Posts , post_Comments , Visitors , PostTags , Tags
 from .forms import comment_form
 
 
@@ -27,7 +27,7 @@ def post_view(request):
 
 
 def post_detail(request,post_name):
-    posts = get_object_or_404 (Posts,post_name=post_name)
+    posts = get_object_or_404(Posts,post_name=post_name)
     # most_visit_obj=Posts.objects.all().order_by('-post_visit')[0:10]
     most_visit_obj = Visitors.objects.filter(page__contains="blog/").order_by('visit_time')[0:10]
     print (most_visit_obj)
@@ -68,3 +68,18 @@ def my_view(request):
 	jalali_join = datetime2jalali(request.user.date_joined).strftime('%y/%m/%d _ %H:%M:%S')
 
 
+
+def tags_view(request):
+    tags = Tags.objects.all()
+    return render(request, 'weblog/tags.html', {'tags': tags})
+
+
+def tags_detail(request,pk):
+    tag_detail = PostTags.objects.filter(tag_id = pk)
+    posts = PostTags.objects.filter(id__in=tag_detail)
+
+   
+    result = Posts.objects.filter(id = posts)
+
+
+    return render(request, 'weblog/tags_detail.html', {'result': result})

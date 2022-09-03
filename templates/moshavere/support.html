@@ -12,7 +12,7 @@
     <meta name="سیستم جامع و یکپارچه مدیریت مراکز رواشناسی، جذب مراجع و درمانجو، نوبت دهی آنلاین و حضوری، حسابرسی دقیق درمانگران و برگزاری کارگاه و گروه درمانی" content=""/>
     <meta name="language" content="" />
     <meta http-equiv="Cache-Control" content="no-cache" />
-    <title>دکتر لینک | Dr. Link | سیستم جامع مدیریت مراکز روانشناسی</title>
+    <title>دکتر لینک | Dr. Link | درخواست مشاوره رایگان | سیستم جامع مدیریت مراکز روانشناسی</title>
 
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
@@ -171,7 +171,7 @@
                 <br>
                 <input type="submit" style="background:#002B6E; color:white; text-align:center; font-size:15px" value="ثبت">
             </form>
-            <script>
+            {% comment %} <script>
                 $("form").submit(function(event) {
                    var recaptcha = $("#g-recaptcha-response").val();
                    if (recaptcha === "") {
@@ -179,7 +179,7 @@
                       alert("لطفا گزینه من روبات نیستم را چک کنید!");
                }
             });
-            </script>
+            </script> {% endcomment %}
    
     </main>
     <!--main-->
