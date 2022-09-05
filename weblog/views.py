@@ -74,12 +74,20 @@ def tags_view(request):
     return render(request, 'weblog/tags.html', {'tags': tags})
 
 
-def tags_detail(request,pk):
-    tag_detail = PostTags.objects.filter(tag_id = pk)
-    posts = PostTags.objects.filter(id__in=tag_detail)
+def tags_detail(request,name_clean):
+    tag_detail = Tags.objects.filter(name_clean = name_clean)
+    posts = PostTags.objects.filter(tag_id__in=tag_detail)
 
+    post_id_list = []
+    result = []
+    for id in posts:
+        post_id = id.post_id
+        post_id_list.append (post_id)
+
+    for r in Posts.objects.filter(id__in = post_id_list):
+        result.append(r)
+    
    
-    result = Posts.objects.filter(id = posts)
 
 
-    return render(request, 'weblog/tags_detail.html', {'result': result})
+    return render(request, 'weblog/tags_detail.html' , {'result': result})

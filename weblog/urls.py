@@ -7,7 +7,8 @@ urlpatterns = [
     path('/search/', search , name= "search"),
     path('/search/', search ),
     path('/tags/', tags_view ),
-    path('/tags/<pk>/', tags_detail ),
+    path('/tags/<slug:name_clean>/', tags_detail ),
+    path('<slug:post_name>/', post_detail ),
     path('/<slug:post_name>/', post_detail),
     path('/search/<slug:post_name>/', post_detail),
     

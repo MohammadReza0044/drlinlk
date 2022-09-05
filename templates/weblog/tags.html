@@ -120,29 +120,17 @@
     <main>
         <div class="container page-content ">
             <div class="page-title blog-page-title">
-                <h2  class="custom-title">وبلاگ</h2>
+                <h2  class="custom-title">برچسب ها</h2>
             </div>
             <!--.page-title-->
 
-            <form id="search_form" method="GET" action="{% url 'search' %}">
-                
-                <input name="search" type="text" placeholder="جستجو" >
-                <button type="submit">
-                    <svg class="drlink-icon">
-                        <use xlink:href="#search-icon"></use>
-                    </svg>
-                </button>
-               
-            </form>
-            
-            
-            <!--.search_result-articles-->
+           <br>
             
             <section class="blog-latest-articles">
                     
                 {% for t in tags %}
                 <article class="article-item"  >
-                   <a href="{{t.id}}"> <h1> {{t.name}}</h1> </a> 
+                   <a href="{{t.name_clean}}"> <h1> {{t.name}}</h1> </a> 
                 
         
                 </article>
