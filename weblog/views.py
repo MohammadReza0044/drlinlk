@@ -28,9 +28,13 @@ def post_view(request):
 
 def post_detail(request,post_name):
     posts = get_object_or_404(Posts,post_name=post_name)
+    posts.post_visit +=1
+    posts.save()
+    
+    
     # most_visit_obj=Posts.objects.all().order_by('-post_visit')[0:10]
     most_visit_obj = Visitors.objects.filter(page__contains="blog/").order_by('visit_time')[0:10]
-    print (most_visit_obj)
+
 
 
     relative_posts = Posts.objects.filter(category_id = posts.category_id).order_by('-post_date')[0:10]
@@ -87,7 +91,4 @@ def tags_detail(request,name_clean):
     for r in Posts.objects.filter(id__in = post_id_list):
         result.append(r)
     
-   
-
-
     return render(request, 'weblog/tags_detail.html' , {'result': result})
