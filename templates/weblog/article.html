@@ -295,9 +295,9 @@
                     </h3>
                     <nav>
                         <ul class="most-visited-articles">
-                        {% for j in most_visit_obj %}
+                        {% for j in most_visited %}
                            
-                            <li><a href="/j.page/"<>{{j.page}}</a></li>
+                            <li><a href="/blog/{{j.post_name}}"<>{{j.post_title_fa}}</a></li>
                         {% endfor %}
                             
                         </ul>

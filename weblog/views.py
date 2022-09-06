@@ -1,11 +1,14 @@
 from django.db.models import Count
 import math
+from datetime import datetime
 from django.shortcuts import render 
 from django.shortcuts import get_object_or_404 , get_list_or_404
 from django.core.paginator import Paginator
 from django.views import View
-from datetime import datetime , timedelta
+import datetime
 from django.contrib import messages
+from collections import Counter
+from django.utils import timezone
 
 
 
@@ -31,17 +34,29 @@ def post_detail(request,post_name):
     posts.post_visit +=1
     posts.save()
     
-    
-    # most_visit_obj=Posts.objects.all().order_by('-post_visit')[0:10]
-    most_visit_obj = Visitors.objects.filter(page__contains="blog/").order_by('visit_time')[0:10]
+    first_date = datetime.datetime.now() - datetime.timedelta(30)
+    most = Visitors.objects.filter(visit_time__date = first_date)
+    most_list_pages = []
+    for p in most:
+        most_page = p.page
+        most_list_pages.append (most_page)
 
+    blog_pages = [word for word in most_list_pages if 'blog/' in word]
+    post_name= []
+    for item in blog_pages:
+        if item.startswith ('/blog/'):
+            item.split('/')
+            x = item.replace("/blog/", "", 1)
+            y = x.replace("/", "", 1)
+            post_name.append(y)
 
-
+    most_visited = Posts.objects.filter(post_name__in = post_name)[0:10]
+   
     relative_posts = Posts.objects.filter(category_id = posts.category_id).order_by('-post_date')[0:10]
     datestring = posts.post_date
     modify = posts.post_modified
-    dt = datetime.fromtimestamp(float(datestring))
-    mt = datetime.fromtimestamp(float(modify))
+    dt = datetime.datetime.fromtimestamp(float(datestring))
+    mt = datetime.datetime.fromtimestamp(float(modify))
     if request.method == 'POST':
         form = comment_form(request.POST)
         if form.is_valid():
@@ -52,7 +67,7 @@ def post_detail(request,post_name):
             new_comment = post_Comments.objects.create(post=posts , author=author, author_email=author_email, comment_content=comment_content)
             messages.add_message(request, messages.SUCCESS, 'دیدگاه شما با موفقیت ثبت شد')
     comment = post_Comments.objects.filter (post=posts, status='approved')
-    return render(request, 'weblog/article.html', {'posts': posts, 'comment': comment, 'dt':dt, 'mt':mt, 'relative_posts':relative_posts,'most_visit_obj':most_visit_obj})
+    return render(request, 'weblog/article.html', {'posts': posts, 'comment': comment, 'dt':dt, 'mt':mt, 'relative_posts':relative_posts,'most_visited':most_visited})
         
                                          
 

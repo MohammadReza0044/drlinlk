@@ -55,7 +55,7 @@ class post_Comments(models.Model):
 
 class Visitors(models.Model):
     ip = models.CharField(max_length=16)
-    visit_time = models.BigIntegerField()
+    visit_time = models.DateTimeField(auto_now_add=True)
     browser = models.CharField(max_length=255)
     device = models.CharField(max_length=255)
     page = models.CharField(max_length=255)
