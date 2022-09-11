@@ -118,15 +118,7 @@
  <my-header> </my-header>
         <!--header-->
     <div class="single-page-blog container ">
-        <form id="search_form"  class="article-search-bar" action="{% url 'search' %}" method="GET">
-            <input type="text" placeholder="جستجو" name="search">
-            <button type="submit">
-                <svg class="drlink-icon">
-                    <use xlink:href="#search-icon"></use>
-                </svg>
-            </button>
-        </form>
-        
+      
         {% if messages %}
             		{% for msg in messages %}
             		<div class="alert alert-success" role="alert">

@@ -187,8 +187,14 @@
             <img class="direct-arrow-icon" src="{% static 'img/direct-arrow.png' %}" />
         </section>
         <!-- .site-cosult-l-->
-
-
+        {% if messages %}
+            		{% for msg in messages %}
+            		<div class="alert alert-success" role="alert">
+                	<p> {{msg}}</p>
+           		    </div>
+            		{% endfor %}
+           	    {% endif %}
+            
         <section class="site-service">
             <h3 class="site-service-title custom-title">
                 امکانات  ویژه دکترلینک
@@ -537,10 +543,15 @@
             <section class="mb-4">
                 <div class="container">
                     <h3 class="latest-articles-tilte custom-title">آخرین مطالب دکتر لینک</h3>
-                <div class="row ">
-            
-                {% for p in posts %}
+
                     
+                    
+                    
+                    
+                    <div class="row ">
+
+            
+                {% for p in posts %}      
                 <div class="col-sm-12 col-md-4 col-lg-4">
                     <div class="card ">
                 <div class="card-body ">
@@ -560,11 +571,23 @@
 
                 </div>
                 </div>
-                </div>
-                {% endfor %}
-                </div>
-            </section>
+            </div>
+            {% endfor %}
         </div>
+        <br><br>
+        <h3 class="latest-articles-tilte custom-title">با عضویت در خبرنامه، جدیدترین مقالات را در ایمیل خود دریافت نمایید</h3>
+        
+        <form id="customer_support_form" method="POST">
+            {% csrf_token %}
+            <div class="form-group name-group">
+                <input  type="email" id="email" class="sender-email form-control form-input-field required-field"    name="email" value="" placeholder="ایمیل خود را وارد نمایید" />
+            </div>
+            <input type="submit" style="background:#002B6E; color:white; text-align:center; font-size:15px" value="ارسال"/>
+           
+        </form>
+    </section>
+</div>
+
         <!--.end of site-blogs-->
         
     </main>

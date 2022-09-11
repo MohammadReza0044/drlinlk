@@ -1,4 +1,5 @@
 from django.db import models
+
 from jalali_date import date2jalali , datetime2jalali
 
 class Posts(models.Model):
@@ -18,6 +19,9 @@ class Posts(models.Model):
 
     def get_jalali_date(self):
         return date2jalali (self.post_date)
+
+    def __str__(self):
+        return self.post_title_fa 
 
     class Meta:
         app_label = 'weblog'
@@ -85,3 +89,14 @@ class Tags(models.Model):
     class Meta:
         app_label = 'weblog'
         db_table = 'tags'
+
+
+
+class Newsletters(models.Model):
+    email = models.EmailField()
+    register_time = models.DateTimeField(auto_now_add=True)
+ 
+
+    class Meta:
+        app_label = 'weblog'
+        db_table = 'newsletters'

@@ -16,15 +16,28 @@ Including another URLconf
 from xml.etree.ElementInclude import include
 from django.contrib import admin
 from django.urls import path , include
+from django.contrib.sitemaps.views import sitemap
+from django.contrib.sitemaps import GenericSitemap
+from weblog.sitemap import PostSitemap , StaticSitemap
+
+
+sitemaps={
+    'posts':PostSitemap,
+    'static':StaticSitemap,
+    
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('survery', include('survery.urls')),
-    path('blog', include('weblog.urls')),
+    path('survery', include(('survery.urls' , 'survery') , namespace='survery')),
+    path('blog', include(('weblog.urls' , 'weblog') , namespace='weblog')),
     path('contact-us', include('contact_us.urls')),
-    path('support', include('moshavere.urls')),
-    path('', include('index.urls')),
-     path('', include('static_pages.urls')),
+    path('support', include(('moshavere.urls' , 'support') , namespace='moshavere')),
+    path('', include(('index.urls' , 'index') , namespace='index')),
+    path('', include(('static_pages.urls', 'static_pages') , namespace='static_pages')),
+    path(
+        'sitemap.xml',sitemap, {'sitemaps':sitemaps}, name='django.contrib.sitemaps.views.sitemap'
+    ),
     
     
 ]
